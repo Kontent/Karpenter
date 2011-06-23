@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension
+	version="1.6"
+	type="template"
+	client="site">
+    <name>Atomic2</name>
+    <creationDate>10/10/09</creationDate>
+    <author>Ron Severdia</author>
+    <authorEmail>contact@kontentdesign.com</authorEmail>
+    <authorUrl>http://www.kontentdesign.com</authorUrl>
+    <copyright>(C) 2011 Kontent Design. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later</license>
+    <version>2.0</version>
+    <description>TPL_ATOMIC2_XML_DESCRIPTION</description>
+    <files>
+        <folder>html</folder>
+        <folder>css</folder>
+        <folder>images</folder>
+        <folder>language</folder>
+        <folder>js</folder>
+        <filename>index.php</filename>
+        <filename>index.html</filename>
+        <filename>favicon.ico</filename>
+        <filename>templateDetails.xml</filename>
+        <filename>template_preview.png</filename>
+        <filename>template_thumbnail.png</filename>
+        <filename>component.php</filename>
+        <filename>error.php</filename>
+    </files>
+
+    <positions>
+        <position>atomic-bottomleft</position>
+        <position>atomic-bottommiddle</position>
+        <position>atomic-search</position>
+        <position>atomic-sidebar</position>
+        <position>atomic-topmenu</position>
+        <position>atomic-topquote</position>
+    </positions>
+	
+	<!-- 	For core templates, we also install/uninstall the language files in the core language folders.
+	-->
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.tpl_atomic2.ini</language>
+        <language tag="en-GB">en-GB/en-GB.tpl_atomic2.sys.ini</language>
+    </languages>
+        
+    <config>
+        <fields name="params">
+        	<fieldset name="css"  label="TPL_ATOMIC2_CSS_FIELDSET_LABEL">
+        		<field name="blueprint" type="radio" default="0" label="Blueprint CSS Framework" description="Blueprint CSS Framework">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+        		<field name="spacer1"  type="spacer" default=""
+					label="Choose Your Blueprint Plug-ins:"
+					description="Choose your plug-ins"
+					filter="string" />
+				<field name="blue-liquid" type="radio" default="0" label="Liquid Grid Plug-in" description="Blueprint Plug-in: Liquid Grid">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="blue-buttons" type="radio" default="0" label="CSS Buttons Plug-in" description="Blueprint Plug-in: CSS Buttons">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="blue-fancy" type="radio" default="0" label="Fancy Type Plug-in" description="Blueprint Plug-in: Fancy Type">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="blue-linkicons" type="radio" default="0" label="Link Icons Plug-in" description="Blueprint Plug-in: Link Icons">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="blue-silksprite" type="radio" default="0" label="SilkSprite Plug-in" description="BBlueprint Plug-in: SilkSprite">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="blue-tabs" type="radio" default="0" label="Tabs Plug-in" description="Blueprint Plug-in: Tabs">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="blue-rtl" type="radio" default="0" label="RTL Plug-in" description="Blueprint Plug-in: RTL">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+        	</fieldset>
+        	 <fieldset name="other-css" label="TPL_ATOMIC2_OTHERCSS_FIELDSET_LABEL">
+                <field name="spacer1"  type="spacer" default=""
+					label="Other CSS Parameters"
+					description="Other CSS Parameters"
+					filter="string" />
+    			 <field name="css-print" type="radio" default="0" label="Print CSS File" description="Load Print CSS File">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="css-screen" type="radio" default="0" label="Screen CSS File" description="Load Screen CSS File">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="css-mobile" type="radio" default="0" label="Mobile CSS File" description="Load Mobile CSS File">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="css-ie" type="radio" default="0" label="IE CSS File" description="Load IE CSS File">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="css3-buttons" type="radio" default="0" label="CSS3 Buttons" description="CSS3 Buttons">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="css-pie" type="radio" default="0" label="CSS PIE" description="CSS PIE">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>				
+            </fieldset>
+            <fieldset name="javascript" label="TPL_ATOMIC2_JAVASCRIPT_FIELDSET_LABEL">
+                <field name="jslibrary" type="list" default="mootools"
+					label="Choose Your Preferred JavaScript Framework"
+					description="Choose your preferred JS framework"
+					filter="word">
+                    <option value="mootools">MooTools</option>
+                    <option value="jquery">jQuery</option>
+					<option value="both">both</option>
+                </field>
+                <field name="adapt" type="radio" default="0" label="Use Minimized" description="Use minimized version of the file">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>                
+                
+                <field name="spacer1"  type="spacer" default=""
+					label="Other Javascript Parameters"
+					description="Other Javascript Parameters"
+					filter="string" />
+    			<field name="adapt" type="radio" default="0" label="Adapt" description="Adapt">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="html5shiv" type="radio" default="0" label="HTML5shiv" description="HTML5shiv">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+               <field name="modernizr" type="radio" default="0" label="Modernizr" description="Modernizr">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+            </fieldset>
+            <fieldset name="mootools" label="TPL_ATOMIC2_MOOTOOLS_FIELDSET_LABEL">
+            	<field name="mootools-more" type="radio" default="0" label="MooTools More" description="Load MooTools More">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+            	<field name="spacer1"  type="spacer" default=""
+					label="Choose Your MooTools Plug-ins:"
+					description="Choose your plugins"
+					filter="string" />
+				<field name="mootouch" type="radio" default="0" label="MooTouch" description="MooTouch">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="lazy" type="radio" default="0" label="Lazy Loading" description="Lazy Loading">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="slideshow" type="radio" default="0" label="Slideshow" description="Slideshow">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="tabs" type="radio" default="0" label="Tabs" description="Tabs">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="mootouch" type="radio" default="0" label="MooTouch" description="MooTouch">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="moodialog" type="radio" default="0" label="MooDialog" description="MooDialog">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="milkbox" type="radio" default="0" label="Milkbox" description="Milkbox">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="iphonecheck" type="radio" default="0" label="iPhone Checkboxes" description="iPhone Checkboxes">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="moosocialize" type="radio" default="0" label="MooSocialize" description="MooSocialize">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="powertools" type="radio" default="0" label="PowerTools" description="PowerTools">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="mochaui" type="radio" default="0" label="MochaUI" description="MochaUI">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="moodropmenu" type="radio" default="0" label="MooDropMenu" description="MooDropMenu">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+        		</field>
+        		<field name="mootips" type="radio" default="0" label="MooTips" description="MooTips">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+        		</field>
+        	</fieldset>
+        	  <fieldset name="jquery" label="TPL_ATOMIC2_JQUERY_FIELDSET_LABEL">
+        		<field name="spacer1"  type="spacer" default=""
+					label="Choose your jQuery plug-ins:"
+					description="Choose your plugins"
+					filter="string" />
+				<field name="jqtouch" type="radio" default="0" label="jQTouch" description="jQTouch">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="jqueryui" type="radio" default="0" label="jQueryUI" description="jQueryUI">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="jqsimpledrop" type="radio" default="0" label="jQuery Simple Dropdown" description="jQuery Simple Dropdown">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="lazyloader" type="radio" default="0" label="LazyLoader" description="LazyLoader">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="smartgallery" type="radio" default="0" label="Smart Gallery" description="Smart Gallery">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="jscarousel" type="radio" default="0" label="jsCarousel" description="jsCarousel">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+        	</fieldset>
+        	<fieldset name="media" label="TPL_ATOMIC2_MEDIA_FIELDSET_LABEL">
+        		<field name="spacer1"  type="spacer" default=""
+					label="Media Parameters"
+					description="Media Parameters"
+					filter="string" />
+				<field name="html5player" type="radio" default="0" label="HTML5 Video Player" description="HTML5 Video Player">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>				
+				<field name="html5playerskin" type="list" default="original"
+					label="Choose A Skin"
+					description="Choose between three optional skins or stick with the original"
+					filter="word">
+                    <option value="original">original</option>
+                    <option value="hu">hu</option>
+					<option value="tube">tube</option>
+					<option value="vim">vim</option>
+                </field>
+        	</fieldset>
+        	<fieldset name="mobile" label="TPL_ATOMIC2_MOBILE_FIELDSET_LABEL">
+        		<field name="spacer1"  type="spacer" default=""
+					label="Mobile Parameters"
+					description="Mobile Parameters"
+					filter="string" />
+				<field name="mobileesp" type="radio" default="0" label="MobileESP" description="MobileESP">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="jqmobile" type="radio" default="0" label="jQuery Mobile" description="jQuery Mobile">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+        	</fieldset>
+        </fields>
+    </config>
+</extension>

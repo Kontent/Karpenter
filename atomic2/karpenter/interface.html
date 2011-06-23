@@ -1,0 +1,613 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Karpenter Interface Page</title>
+
+        <!-- CSS -->        
+        <link rel="stylesheet" href="css/karpenter-screen.css" type="text/css" media="screen, projection">
+        <link rel="stylesheet" href="css/karpenter-print.css" type="text/css" media="print">
+        <link href="css/karpenter-moodropmenu.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="css/karpenter-iphone-checkbox.css" rel="stylesheet" type="text/css" />
+        <link href="css/karpenter-MooDialog.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="css/karpenter-tips.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="css/karpenter-milkbox.css" rel="stylesheet" type="text/css" />
+        <link href="css/karpenter-mooSocialize.css" rel="stylesheet" type="text/css" />        
+        <link href="css/karpenter-smart-gallery.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="css/karpenter-jsCarousel.css" rel="stylesheet" type="text/css" />
+        <link href="css/karpenter-simple-dropdown.css" rel="stylesheet" type="text/css" />
+        <link type="text/css" href="js/jquery/jquery-ui/css/ui-lightness/jquery-ui.css" rel="stylesheet" />         
+        <!--[if lt IE 8]><link rel="stylesheet" href="css/karpenter-ie.css" type="text/css" media="screen, projection"><![endif]-->
+
+        <style>
+            .myDialog {
+                margin: -200px 0 0 -350px;
+                width: 700px;
+                height: 400px;
+            }
+
+            .myDialog iframe {
+                width: 700px;
+                height: 400px;    
+            }
+        </style>
+
+        <style>
+            #gallery img{
+                border: 5px solid #78c7f2; }
+            </style>
+
+
+            <!-- JS -->
+            <script src="js/karpenter-mootools.js" type="text/javascript"></script>
+            <script src="js/karpenter-mootools-more.js" type="text/javascript"></script>
+            <script src="js/karpenter-modernizr.js" type="text/javascript"></script>
+            <script src="js/karpenter-pie.js" type="text/javascript"></script>
+
+
+            <script charset="utf-8" type="text/javascript" src="https://github.com/rpflorence/Loop/raw/master/Source/Loop.js"></script>
+            <script charset="utf-8" type="text/javascript" src="js/karpenter-slideshow.js"></script>
+            <script charset="utf-8" type="text/javascript" src="js/karpenter-tabs.js"></script>
+            <script charset="utf-8" type="text/javascript" src="js/karpenter-declarative.js"></script>
+            <script charset="utf-8" type="text/javascript" src="js/karpenter-lazy.js"></script>
+            <script type="text/javascript" src="js/karpenter-moodropmenu.js"></script>
+            <script type="text/javascript" src="js/karpenter-iphone-checkbox.js"></script>
+
+            <script src="js/karpenter-Overlay.js" type="text/javascript"></script>
+
+            <script src="js/karpenter-MooDialog.js" type="text/javascript"></script>
+            <script src="js/karpenter-MooDialog.Fx.js" type="text/javascript"></script>
+
+            <script src="js/karpenter-MooDialog.Alert.js" type="text/javascript"></script>
+            <script src="js/karpenter-MooDialog.Confirm.js" type="text/javascript"></script>
+            <script src="js/karpenter-MooDialog.Error.js" type="text/javascript"></script>
+            <script src="js/karpenter-MooDialog.Prompt.js" type="text/javascript"></script>
+            <script src="js/karpenter-MooDialog.IFrame.js" type="text/javascript"></script>
+            <script src="js/karpenter-MooDialog.Request.js" type="text/javascript"></script>
+
+            <script src="js/karpenter-milkbox.js" type="text/javascript"></script>
+
+            <script language="javascript" type="text/ecmascript" src="js/karpenter-mooSocialize.js"></script>
+            <script src="js/karpenter-powertools.js" type="text/javascript"></script>
+
+
+
+            <script src="js/karpenter-jquery.js" type="text/javascript"></script>        
+            <script src="js/karpenter-jq-modern-lazyloader.js" type="text/javascript"></script>        
+            <script src="js/karpenter-smart-gallery.min.js" type="text/javascript"></script>
+            <script src="js/karpenter-jsCarousel.js" type="text/javascript"></script>
+            <script src="js/karpenter-simple-dropdown.js" type="text/javascript"></script>
+            <script type="text/javascript" src="js/jquery/jquery-ui/js/jquery-ui.js"></script>
+
+
+
+            <!-- Fonts -->
+            <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:regular,bolditalic' rel='stylesheet' type='text/css'>
+            <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+
+
+
+            <script type="text/javascript" src="js/karpenter-noconflict.js"></script>
+
+        </head>
+        <body>
+
+            <div class="container">
+            <h1>Karpenter Interface Examples</h1>
+            <hr>
+            <h2 class="alt">Dropdown Menus</h2>
+            <div id="nav_wrapper"> 
+                <ul id="nav"> 
+                    <li><div><span>Info</span></div> 
+                        <ul> 
+                            <li><div><span>Test</span></div> 
+                                <ul> 
+                                    <li><div><span>Problem 1</span></div></li> 
+                                    <li><div><span>Problem 2</span></div></li> 
+                                    <li><div><span>Problem 3</span></div></li> 
+                                </ul> 
+                            </li> 
+                        </ul> 
+                    </li> 
+                    <li> 
+                        <div><span>Projects</span></div> 
+                        <ul> 
+                            <li> 
+                                <div><span>Websites</span></div> 
+                                <ul> 
+                                    <li> 
+                                        <div><span>Website 1</span></div> 
+                                    </li> 
+                                    <li> 
+                                        <div><span>Website 2</span></div> 
+                                    </li> 
+                                    <li> 
+                                        <div><span>Website 3</span></div> 
+                                    </li> 
+                                    <li> 
+                                        <div><span>Website 4</span></div> 
+                                    </li> 
+                                </ul> 
+                            </li> 
+                            <li> 
+                                <div><span>Website design</span></div> 
+                            </li> 
+                            <li> 
+                                <div><span>Javascript</span></div> 
+                            </li> 
+                        </ul> 
+                    </li> 
+                </ul> 
+            </div>
+
+            <script type="text/javascript">
+                <!--
+
+                window.addEvent('domready',function(){
+
+                    var dropMenu = new MooDropMenu($('nav'),{
+                        onOpen: function(el){
+                            el.fade('in')
+                        },
+                        onClose: function(el){
+                            el.fade('out');
+                        },
+                        onInitialize: function(el){
+                            el.fade('hide').set('tween',{duration:200});
+                        }
+                    });
+
+                });
+
+                // -->
+            </script>
+
+            <hr>
+            <h2 class="alt">Slideshow</h2>
+            <style>
+                #declarative{padding:50px;background:#3b3013;}
+                #declarative-slideshow{position:relative;width:800px;height:300px;margin:auto;overflow:hidden;}
+                #declarative-slideshow div{width:100%;height:200px;position:absolute;top:0;left:0;font-size:50px;padding-top:100px;text-align:center;color:#fdf3c1;font-family:"Josefin Slab";}
+                #declarative .about > *{background:#fdf3c1;}
+                .red{background:#9c0c0a;}
+                .orange{background:#e88833;}
+                .brown{background:#8f6031;}
+            </style>
+
+            <section id=declarative class=demo>
+                <div id=declarative-slideshow class=slideshow data-slideshow="delay:2000 duration:1000 transition:fade">
+                    <div data-slideshow="transition:none"                  class=orange>none</div>
+                    <div data-slideshow="transition:slideDown"             class=brown>slideDown</div>
+                    <div data-slideshow="transition:slideUp duration:500"  class=red>slideUp:500</div>
+                    <div data-slideshow="transition:slideLeft"             class=orange>slideLeft</div>
+                    <div data-slideshow="transition:slideRight"            class=brown>slideRight</div>
+                    <div data-slideshow="transition:crossFade"             class=red>crossFade</div>
+                    <div data-slideshow="transition:pushUp duration:500"   class=red>pushUp:500</div>
+                    <div data-slideshow="transition:pushDown"              class=brown>pushDown</div>
+                    <div data-slideshow="transition:pushLeft duration:1500" class=orange>pushLeft:1500</div>
+                    <div data-slideshow="transition:pushRight"             class=brown>pushRight</div>
+                    <div data-slideshow="transition:fadeThroughBackground" class=red>fadeThroughBackground</div>
+                    <div data-slideshow="transition:blindUp"               class=red>blindUp</div>
+                    <div data-slideshow="transition:blindDown"             class=orange>blindDown</div>
+                    <div data-slideshow="transition:blindLeft"             class=brown>blindLeft</div>
+                    <div data-slideshow="transition:blindRight"            class=red>blindRight</div>
+                    <div data-slideshow="transition:blindUpFade"           class=orange>blindUpFade</div>
+                    <div data-slideshow="transition:blindDownFade"         class=brown>blindDownFade</div>
+                    <div data-slideshow="transition:blindLeftFade"         class=red>blindLeftFade</div>
+                    <div data-slideshow="transition:blindRightFade"        class=orange>blindRightFade</div>
+                    <div data-slideshow="transition:fade"                  class=orange>fade</div>
+                </div>
+            </section>
+
+            <hr>
+            <h2 class="alt">Dialog Alerts & Tooltips</h2>
+
+            <script type="text/javascript">
+                <!--
+
+                window.addEvent('domready', function(){
+
+                    $('alert').addEvent('click', function(e){
+                        e.stop();
+                        var box = new MooDialog.Alert('This is an alert message');                        
+
+                    });
+
+	
+                    $('iframe').addEvent('click', function(e){
+                        e.stop();
+                        new MooDialog.Iframe('modal.html', {
+                            title: 'MooDialog IFrame',
+                            'class': 'MooDialog myDialog'
+                        });
+                    });
+
+	
+
+                });
+
+                // -->
+            </script>
+
+
+
+            <p>
+                <a href="#" id="iframe" onclick="return false;">MooDialog iFrame</a>
+            </p>
+
+
+            <a href="#" id="alert" title="This is a tooltip" onclick="return false;" class="Tips3">Click here for an alert message</a>
+
+            <script type="text/javascript">
+                
+                var Tips3 = new Tips($$('.Tips3'), {
+                showDelay: 400,
+                hideDelay: 400,
+                fixed: true
+                });
+            </script>
+
+
+            <p></p>
+            <h2 class="alt">Tabs</h2>
+
+            <style>
+                #tabs{background-color:#8c4a3b;}
+                #tabs-slideshow ul{width:800px;margin:0 auto;list-style-type:none;padding:10px;}
+                #tabs-slideshow li{float:left;}
+                #tabs-slideshow li a{display:block;color:#dceaf2;text-decoration:none;padding-top:4px;padding-left:8px;padding-right:8px;background:#232a40;-webkit-border-top-left-radius:6px;-webkit-border-top-right-radius:6px;margin-right:4px;}
+                #tabs-slideshow li a:hover{background-color:#313a40;}
+                #tabs-slideshow li a.current{background:#dceaf2;color:#232a40;}
+                .tab{width:800px;margin:auto;clear:both;padding:10px;background:#dceaf2;overflow:hidden;}
+            </style>
+
+            <section id=tabs class=demo>
+                <div id=tabs-slideshow class=slideshow>
+                    <ul>
+                        <li><a class=current href="#tab1">Tab One</a></li>
+                        <li><a href="#tab2">Tab Two</a></li>
+                        <li><a href="#tab3">Tab Three</a></li>
+                    </ul>
+                    <div id=tab1 class=tab>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    <div id=tab2 class=tab>
+                        <p>Magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    <div id=tab3 class=tab>
+                        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
+                </div>
+
+            </section>
+            <hr>
+            <h2 class="alt">Lazy Image Loading</h2>
+            <div class="span-7">
+                <img src="img/test.jpg"  alt="test">
+            </div>
+
+            <hr>
+
+            <h2 class="alt"> Moo Socializer </h2>
+            <img src="img/mooSocialize/my_socializer.gif" class="socializer" title="Website Test" alt="http://www.artviper.com" />
+            <hr>
+
+
+            <h2 class="alt">Milkbox</h2>
+
+            <div id="box">
+
+                <table id="gallery" cellspacing="0" style="margin-top:20px; ">
+                    <tr>
+                        <td><a href="img/milkbox-demo/01b.jpg" rel="milkbox[gall1]" title="Lorem ipsum..."><img src="img/milkbox-demo/01.jpg" alt="" width="100" height="100" /></a></td>
+                        <td><a href="img/milkbox-demo/02b.jpg" rel="milkbox[gall1]" ><img src="img/milkbox-demo/02.jpg" alt="" width="100" height="100" /></a></td>
+                        <td><a href="img/milkbox-demo/03b.jpg" rel="milkbox[gall1]" ><img src="img/milkbox-demo/03.jpg" alt="" width="100" height="100" /></a></td>
+                        <td style="width:100px"><a href="img/milkbox-demo/logo.swf" rev="width:600, height:200"  rel="milkbox[gall1]"  title="Swf file: this one needs flash player 10."><img src="img/milkbox-demo/logo.jpg" alt="" width="100" height="100" /></a></td>
+                    </tr>
+                </table>
+                <br />		
+            </div>
+            <hr>
+
+            <h2 class="alt">iPhone checkboxes</h2>
+
+            <h3>Off by default</h3>
+            <p><input type="checkbox" /></p>
+            <h3>On by default</h3>
+            <p><input type="checkbox" checked="checked" /></p>
+
+            <h2 class="alt"> Powertools </h2>
+
+            <script type="text/javascript">
+                window.addEvent('domready', function(){
+                    var element = document.id('swipe'),
+                    timer;
+
+                    element.store('swipe:cancelVertical', true);
+                    element.addEvent('swipe', function(event){
+                        this.set('text', 'Swipe ' + event.direction);
+
+                        clearTimeout(timer);
+                        timer = (function(){
+                            this.set('text', 'Swipe');
+                        }).delay(500, this);
+                    });
+                });
+            </script>
+
+            <div id="swipe" class="box">
+		Swipe
+            </div>
+
+            <script type="text/javascript">
+                window.addEvent('domready', function(){
+                    var element = document.id('touchhold'),
+                    timer;
+
+                    element.store('touchhold:delay', 700);
+                    element.addEvent('touchhold', function(event){
+                        this.set('text', 'Touchhold fired');
+
+                        clearTimeout(timer);
+                        timer = (function(){
+                            this.set('text', 'Touchhold');
+                        }).delay(500, this);
+                    });
+                });
+            </script>
+            <div id="touchhold" class="box">
+		Touchhold
+            </div>
+
+            <hr>
+
+            <h1 class="alt">JQuery </h1>
+
+            <h2 class="alt">Lazy Image Loading </h2>
+
+
+
+            <div class="photo"><img src="img/test.jpg" data-src="img/test.jpg" alt="My Image" /></div>
+
+            <hr>
+
+            <h2 class="alt">Smart Gallery</h2>
+            <script type="text/javascript">
+                jQuery(document).ready(function() {
+                    jQuery('#smart-gallery').gallery({ stickthumbnails: true, random: true});
+                });
+            </script>
+
+            <div id="smart-gallery">
+                <a href="img/smart-gallery-demo/cubagallery-img-1.jpg" title="First Image">
+                    <img src="img/smart-gallery-demo/cubagallery-img-1.jpg" /></a>
+                <a href="img/smart-gallery-demo/cubagallery-img-2.jpg" title="Second Image">
+                    <img src="img/smart-gallery-demo/cubagallery-img-2.jpg" /></a> 
+                <a href="img/smart-gallery-demo/cubagallery-img-3.jpg" title="Third Image">
+                    <img src="img/smart-gallery-demo/cubagallery-img-3.jpg" /></a>
+                <a href="img/smart-gallery-demo/cubagallery-img-4.jpg" title="Fourth Image">
+                    <img src="img/smart-gallery-demo/cubagallery-img-4.jpg" /></a> 
+            </div>
+            <hr>
+            <h2 class="alt">jsCarousel</h2>
+            <script type="text/javascript">
+                jQuery(document).ready(function() {
+                    jQuery('#jsCarousel').jsCarousel({ onthumbnailclick: function(src) { alert(src); }, autoscroll: true });
+                });
+            </script>
+            <div style="margin-left:100px;margin-bottom:100px;">
+                <div id="jsCarousel">
+                    <div>
+                        <img src="img/jsCarousel-demo/img_1.jpg" /><br />
+                        <span class="thumbnail-text">Image Text</span></div>
+                    <div>
+                        <img src="img/jsCarousel-demo/img_2.jpg" /><br />
+                        <span class="thumbnail-text">Image Text</span></div>
+                    <div>
+                        <img src="img/jsCarousel-demo/img_3.jpg" /><br />
+                        <span class="thumbnail-text">Image Text</span></div>
+                    <div>
+                        <img src="img/jsCarousel-demo/img_4.jpg" /><br />
+                        <span class="thumbnail-text">Image Text</span></div>
+                    <div>
+                        <img src="img/jsCarousel-demo/img_5.jpg" /><br />
+                        <span class="thumbnail-text">Image Text</span></div>
+                    <div>
+                        <img src="img/jsCarousel-demo/img_6.jpg" /><br />
+                        <span class="thumbnail-text">Image Text</span></div>
+                    <div>
+                        <img src="img/jsCarousel-demo/img_7.jpg" /><br />
+                        <span class="thumbnail-text">Image Text</span></div>
+                    <div>
+                        <img src="img/jsCarousel-demo/img_8.jpg" /><br />
+                        <span class="thumbnail-text">Image Text</span></div>
+                    <div>
+                        <img src="img/jsCarousel-demo/img_9.jpg" /><br />
+                        <span class="thumbnail-text">Image Text</span></div>
+                    <div>
+                        <img src="img/jsCarousel-demo/img_10.jpg" /><br />
+                        <span class="thumbnail-text">Image Text</span></div>                    
+                </div>
+            </div>
+
+            <hr>
+
+            <div id="simple drop down menu">
+
+                <h2 class="alt"">jQuery Simple Drop Down Menu</h2>
+
+
+                <ul id="jsddm">
+                    <li><a href="#">JavaScript</a>
+                        <ul>
+                            <li><a href="#">Drop Down Menu</a></li>
+                            <li><a href="#">jQuery Plugin</a></li>
+                            <li><a href="#">Ajax Navigation</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Effect</a>
+                        <ul>
+                            <li><a href="#">Slide Effect</a></li>
+                            <li><a href="#">Fade Effect</a></li>
+                            <li><a href="#">Opacity Mode</a></li>
+                            <li><a href="#">Drop Shadow</a></li>
+                            <li><a href="#">Semitransparent</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Navigation</a></li>
+                    <li><a href="#">HTML/CSS</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+
+
+            </div>
+            <br><br><br>
+
+            <hr>
+
+            <h2 class="alt">jQuery UI</h2>
+            <script type="text/javascript">
+                jQuery(function(){
+
+                    // Accordion
+                    jQuery("#accordion").accordion({ header: "h3" });
+
+				
+
+                    // Dialog
+                    jQuery('#dialog').dialog({
+                        autoOpen: false,
+                        width: 600,
+                        buttons: {
+                            "Ok": function() {
+                                jQuery(this).dialog("close");
+                            },
+                            "Cancel": function() {
+                                jQuery(this).dialog("close");
+                            }
+                        }
+                    });
+
+                    // Dialog Link
+                    jQuery('#dialog_link').click(function(){
+                        jQuery('#dialog').dialog('open');
+                        return false;
+                    });
+
+                    // Datepicker
+                    jQuery('#datepicker').datepicker({
+                        inline: true
+                    });
+
+                    // Progressbar
+                    jQuery("#progressbar").progressbar({
+                        value: 20
+                    });
+
+                    //hover states on the static widgets
+                    jQuery('#dialog_link, ul#icons li').hover(
+                    function() { jQuery(this).addClass('ui-state-hover'); },
+                    function() { jQuery(this).removeClass('ui-state-hover'); }
+                );
+
+                });
+            </script>
+            <style type="text/css">
+                /*demo page css*/
+                .jqueryUIhm{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px;}
+                .demoHeaders { margin-top: 2em; }
+                #dialog_link {padding: .4em 1em .4em 20px;text-decoration: none;position: relative;}
+                #dialog_link span.ui-icon {margin: 0 5px 0 0;position: absolute;left: .2em;top: 50%;margin-top: -8px;}
+                ul#icons {margin: 0; padding: 0;}
+                ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
+                ul#icons span.ui-icon {float: left; margin: 0 4px;}
+            </style>
+
+            <div class="jqueryUI">
+
+                <!-- Accordion -->
+                <h2 class="alt">Accordion</h2>
+                <div id="accordion">
+                    <div>
+                        <h3><a href="#">First</a></h3>
+                        <div>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
+                    </div>
+                    <div>
+                        <h3><a href="#">Second</a></h3>
+                        <div>Phasellus mattis tincidunt nibh.</div>
+                    </div>
+                    <div>
+                        <h3><a href="#">Third</a></h3>
+                        <div>Nam dui erat, auctor a, dignissim quis.</div>
+                    </div>
+                </div>
+
+                <!-- Dialog NOTE: Dialog is not generated by UI in this demo so it can be visually styled in themeroller-->
+                <h2 class="alt">Dialog</h2>
+                <p><a href="#" id="dialog_link" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-newwin"></span>Open Dialog</a></p>
+
+
+                <h2 class="alt">Overlay and Shadow Classes <em>(not currently used in UI widgets)</em></h2>
+                <div style="position: relative; width: 96%; height: 200px; padding:1% 4%; overflow:hidden;" class="fakewindowcontain">
+                    <p>Lorem ipsum dolor sit amet,  Nulla nec tortor. Donec id elit quis purus consectetur consequat. </p><p>Nam congue semper tellus. Sed erat dolor, dapibus sit amet, venenatis ornare, ultrices ut, nisi. Aliquam ante. Suspendisse scelerisque dui nec velit. Duis augue augue, gravida euismod, vulputate ac, facilisis id, sem. Morbi in orci. </p><p>Nulla purus lacus, pulvinar vel, malesuada ac, mattis nec, quam. Nam molestie scelerisque quam. Nullam feugiat cursus lacus.orem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero risus, commodo vitae, pharetra mollis, posuere eu, pede. Nulla nec tortor. Donec id elit quis purus consectetur consequat. </p><p>Nam congue semper tellus. Sed erat dolor, dapibus sit amet, venenatis ornare, ultrices ut, nisi. Aliquam ante. Suspendisse scelerisque dui nec velit. Duis augue augue, gravida euismod, vulputate ac, facilisis id, sem. Morbi in orci. Nulla purus lacus, pulvinar vel, malesuada ac, mattis nec, quam. Nam molestie scelerisque quam. </p><p>Nullam feugiat cursus lacus.orem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero risus, commodo vitae, pharetra mollis, posuere eu, pede. Nulla nec tortor. Donec id elit quis purus consectetur consequat. Nam congue semper tellus. Sed erat dolor, dapibus sit amet, venenatis ornare, ultrices ut, nisi. Aliquam ante. </p><p>Suspendisse scelerisque dui nec velit. Duis augue augue, gravida euismod, vulputate ac, facilisis id, sem. Morbi in orci. Nulla purus lacus, pulvinar vel, malesuada ac, mattis nec, quam. Nam molestie scelerisque quam. Nullam feugiat cursus lacus.orem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero risus, commodo vitae, pharetra mollis, posuere eu, pede. Nulla nec tortor. Donec id elit quis purus consectetur consequat. Nam congue semper tellus. Sed erat dolor, dapibus sit amet, venenatis ornare, ultrices ut, nisi. </p>
+
+                    <!-- ui-dialog -->
+                    <div class="ui-overlay"><div class="ui-widget-overlay"></div><div class="ui-widget-shadow ui-corner-all" style="width: 302px; height: 152px; position: absolute; left: 50px; top: 30px;"></div></div>
+                    <div style="position: absolute; width: 280px; height: 130px;left: 50px; top: 30px; padding: 10px;" class="ui-widget ui-widget-content ui-corner-all">
+                        <div class="ui-dialog-content ui-widget-content" style="background: none; border: 0;">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- ui-dialog -->
+                <div id="dialog" title="Dialog Title">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+
+
+
+
+
+
+                <!-- Datepicker -->
+                <h2 class="alt">Datepicker</h2>
+                <div id="datepicker"></div>
+
+                <!-- Progressbar -->
+                <h2 class="alt">Progressbar</h2>
+                <div id="progressbar"></div>
+
+                <!-- Highlight / Error -->
+                <h2 class="alt">Highlight / Error</h2>
+                <div class="ui-widget">
+                    <div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+                        <p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+                            <strong>Hey!</strong> Sample ui-state-highlight style.</p>
+                    </div>
+                </div>
+                <br/>
+                <div class="ui-widget">
+                    <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+                        <p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+                            <strong>Alert:</strong> Sample ui-state-error style.</p>
+                    </div>
+                </div>
+
+            </div>
+            <hr>
+
+            <hr>
+            <p style="text-align:center">
+                <a href="http://extensions.kontentdesign.com" class="noicon">
+                    <img src="http://extensions.kontentdesign.com/images/install/logo_karpenter.png" alt="Karpenter" height="30" width="160" class="top"></a>
+            </p>
+        </div>
+    </body>
+</html>

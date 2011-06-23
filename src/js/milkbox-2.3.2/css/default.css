@@ -1,0 +1,33 @@
+*{ margin:0; padding:0; }
+
+img{ border:none; }
+table, td{ border:none; margin:0; padding:0; }
+td{ text-align:left; vertical-align:top; }
+form{ margin:0; padding:0; }
+
+.spacer{ clear:both; margin:0; padding:0; height:0; font-size:0; overflow:hidden; }
+
+p{ padding:0px; margin:0px 0px 10px 0px; }
+h1,h2,h3,h4{  margin:0px 0px 10px 0px; padding:0px;  font-weight:bold; }
+h2,h3,h4{ font-size: 10px; }
+h1{ font-size: 12px; }
+
+
+.bold, .redBold, .bold13, .pinkBold, .lightGreyBold, .whiteBold,.orangeBold{ font-weight:bold; }
+.bold12{ font-size:13px; }
+.lightGrey,.lightGreyBold{ color:#999; }
+.orange,.orangeBold{ color:#FF5400; }
+.white,.whiteBold{ color:#fff; }
+.pink,.pinkBold{ color:#CC9F9F; }
+.red, .redBold{ color:#C10000; }
+.italic,.italic10{  font-style:italic; }
+.italic10{ font-size:10px; }
+
+a{ color:#252525;  text-decoration:none; outline:none; }
+a:hover{ color:#C10000; }
+
+.leftImage, .rightImage{ border-color:#fff; border-style:solid; }
+.leftImage, .left{ float:left; }
+.rightImage, .right{ float:right; }
+
+.noborder{ border-bottom:none; }

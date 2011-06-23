@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Accessible Mootools Drop Menu</title>
+
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script src="../source/mootools-1.2.4-core.js" type="text/javascript"></script>
+<script src="../source/MooDropMenu.js" type="text/javascript"></script>
+
+<link  href="MooDropMenu.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script type="text/javascript">
+<!--
+
+window.addEvent('domready',function(){
+
+    var dropMenu = new MooDropMenu($('nav'),{
+        onOpen: function(el){
+            el.fade('in')
+        },
+        onClose: function(el){
+            el.fade('out');
+        },
+        onInitialize: function(el){
+            el.fade('hide').set('tween',{duration:200});
+        }
+    });
+
+});
+
+// -->
+</script>
+
+
+</head>
+<body>
+
+<h1>Accessible Mootools Drop Menu</h1>
+
+<p>
+	This widget provides an accessible version of the MooDropMenu. You can create an unlimited nested menu,
+	build by the HTML tags <code>ul</code> and <code>li</code>. The menu can be controlled by the keyboard 
+	and supports common screen reading software.
+	
+	Widget based on <a href="http://mootools.net/forge/p/moodropmenu" title="MooDropMenu on Mootools Forge">MooDropMenu</a> by Arian Stolwijk! 
+</p>
+
+<h2>Demo</h2>
+
+<div id="nav_wrapper">
+                    <ul id="nav">
+                    	<li><div><span>Info</span></div>
+                    		<ul>
+                    			<li><div><span>Test</span></div>
+                    				<ul>
+                    					<li><div><span>Problem 1</span></div></li>
+                    					<li><div><span>Problem 2</span></div></li>
+                    					<li><div><span>Problem 3</span></div></li>
+                    				</ul>
+                    			</li>
+                    		</ul>
+                    	</li>
+                        <li>
+                            <div><span>Projects</span></div>
+                            <ul>
+                                <li>
+                                    <div><span>Websites</span></div>
+                                    <ul>
+                                        <li>
+                                            <div><span>Website 1</span></div>
+                                        </li>
+                                        <li>
+                                            <div><span>Website 2</span></div>
+                                        </li>
+                                        <li>
+                                            <div><span>Website 3</span></div>
+                                        </li>
+                                        <li>
+                                            <div><span>Website 4</span></div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div><span>Website design</span></div>
+                                </li>
+                                <li>
+                                    <div><span>Javascript</span></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div><span>Learn</span></div>
+                            <ul>
+                                <li>
+                                    <div><span>Javascript</span></div>
+                                    <ul>
+                                        <li>
+                                            <div><span>Mootools</span></div>
+                                            <ul>
+                                                <li>
+                                                    <div><span>Official</span></div>
+                                                    <ul>
+                                                        <li>
+                                                            <div><span>Github Core</span></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span>Github More</span></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span>Lighthouse</span></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span>Mootorial</span></div>
+                                                        </li>
+                                                        <li>
+                                                            <div><span>Mootools Blog</span></div>
+                                                            <ul>
+                                                                <li>
+                                                                    <div><span>sub</span></div>
+                                                                </li>
+                                                                <li>
+                                                                    <div><span>sub</span></div>
+                                                                </li>
+                                                                <li>
+                                                                    <div><span>sub</span></div>
+                                                                </li>
+                                                                <li>
+                                                                    <div><span>sub</span></div>
+                                                                    <ul>
+                                                                        <li>
+                                                                            <div><span>sub sub</span></div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div><span>sub sub</span></div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div><span>sub sub</span></div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div><span>eSteak.net</span></div>
+                                                </li>
+                                                <li>
+                                                    <div><span>Mooforum.net</span></div>
+                                                </li>
+                                                <li>
+                                                    <div><span>DavidWalsh.name</span></div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div><span>Mootools.net</span></div>
+                                        </li>
+                                        <li>
+                                            <div><span>Quirksmode.org</span></div>
+                                        </li>
+                                        <li>
+                                            <div><span>Ajaxian</span></div>
+                                        </li>
+                                        <li>
+                                            <div><span>W3School</span></div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div><span>CSS</span></div>                                    
+                                    <ul>
+                                        <li>
+                                            <div><span>W3Scool</span></div>
+                                        </li>
+                                        <li>
+                                            <div><span>Ajaxian</span></div>
+                                        </li>
+                                        <li>
+                                            <div><span>A List Apart</span></div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+<h2>Feedback</h2>
+<p>For any feedback you can send an <a href="mailto:eva.loesch@iao.fraunhofer.de">e-mail</a></p>
+</body>
+</html>

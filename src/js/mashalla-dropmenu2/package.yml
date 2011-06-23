@@ -1,0 +1,11 @@
+name: Accessible MooDropMenu
+author: mashalla
+category: Widgets
+tags: [menu, dropmenu, navigation, accessible]
+#docs: http://no-docs.de
+#demo: http://no-demo.de
+current: 1.0
+
+sources:
+  - "source/MooDropMenu.js"
+

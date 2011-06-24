@@ -16,7 +16,6 @@ $blueliquid = $this->params->get('blue-liquid');
 $bluebuttons = $this->params->get('blue-buttons');
 $bluefancy = $this->params->get('blue-fancy');
 $bluelinkicons = $this->params->get('blue-linkicons');
-//////////////////////////////////////////////////
 $bluesilksprite = $this->params->get('blue-silksprite');
 $bluetabs = $this->params->get('blue-tabs');
 //////////////////////////////////////////////////
@@ -25,7 +24,6 @@ $cssprint = $this->params->get('css-print');
 $cssscreen = $this->params->get('css-screen');
 $cssmobile = $this->params->get('css-mobile');
 $cssie = $this->params->get('css-ie');
-//////////////////////////////////////////////////
 $css3buttons = $this->params->get('css-buttons');
 $csspie = $this->params->get('css-pie');
 //////////////////////////////////////////////////
@@ -331,7 +329,7 @@ if ($html5player == "1") {
         <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/karpenter/karpenter-screen.css" type="text/css" media="screen, projection" />
         <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/karpenter/karpenter-print.css" type="text/css" media="print" />
         <!--[if lt IE 8]><link rel="stylesheet" href="blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
-        <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/blueprint/plugins/joomla-nav/screen.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/karpenter/karpenter-blue-joomlanav.css" type="text/css" media="screen" />
 
         <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/template.css" type="text/css" />
 

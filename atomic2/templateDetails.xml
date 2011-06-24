@@ -60,7 +60,7 @@
 					<option value="0">OFF</option>
 					<option value="1">ON</option>
 				</field>
-				<field name="blue-buttons" type="radio" default="0" label="CSS Buttons Plug-in" description="Blueprint Plug-in: CSS Buttons">
+				<field name="blue-buttons" type="radio" default="0" label="CSS Buttons Plug-in" description="Blueprint Plug-in: CSS Buttons:: enables nice CSS buttons. Turn this off if you're using CSS3 buttons.">
 					<option value="0">OFF</option>
 					<option value="1">ON</option>
 				</field>
@@ -80,16 +80,19 @@
 					<option value="0">OFF</option>
 					<option value="1">ON</option>
 				</field>
-				<field name="blue-rtl" type="radio" default="0" label="RTL Plug-in" description="Blueprint Plug-in: RTL">
-					<option value="0">OFF</option>
-					<option value="1">ON</option>
-				</field>
+				
         	</fieldset>
         	 <fieldset name="other-css" label="TPL_ATOMIC2_OTHERCSS_FIELDSET_LABEL">
                 <field name="spacer1"  type="spacer" default=""
 					label="Other CSS Parameters"
 					description="Other CSS Parameters"
 					filter="string" />
+					
+				<field name="meyers-reset" type="radio" default="0" label="Meyers' Reset" description="Load a variation on Eric Meyer's CSS Reset. Blueprint already has this so if you have Blueprint enabled, leave this off.">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				
     			 <field name="css-print" type="radio" default="0" label="Print CSS File" description="Load Print CSS File">
 					<option value="0">OFF</option>
 					<option value="1">ON</option>
@@ -155,10 +158,6 @@
 					label="Choose Your MooTools Plug-ins:"
 					description="Choose your plugins"
 					filter="string" />
-				<field name="mootouch" type="radio" default="0" label="MooTouch" description="MooTouch">
-					<option value="0">OFF</option>
-					<option value="1">ON</option>
-				</field>
 				<field name="lazy" type="radio" default="0" label="Lazy Loading" description="Lazy Loading">
 					<option value="0">OFF</option>
 					<option value="1">ON</option>
@@ -267,6 +266,120 @@
 					<option value="1">ON</option>
 				</field>
 				<field name="jqmobile" type="radio" default="0" label="jQuery Mobile" description="jQuery Mobile">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+        	</fieldset>
+        	<fieldset name="typography" label="TPL_ATOMIC2_TYPOGRAPHY_FIELDSET_LABEL">
+        		<field name="spacer1"  type="spacer" default=""
+					label="Serif Fonts"
+					description="Typography Parameters"
+					filter="string" />
+				<field name="nixieone" type="radio" default="0" label="Nixie One" description="Nixie One">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="kameron" type="radio" default="0" label="Kameron" description="Kameron">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="goudy" type="radio" default="0" label="Goudy Bookletter 1911" description="Goudy Bookletter 1911">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="josefin-slab" type="radio" default="0" label="Josefin Slab" description="Josefin Slab">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="arvo" type="radio" default="0" label="Arvo" description="Arvo">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="garamond" type="radio" default="0" label="EB Garamond" description="EB Garamond">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="crismon" type="radio" default="0" label="Crimson Text" description="Crimson Text">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="bentham" type="radio" default="0" label="Bentham" description="Bentham">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="spacer1"  type="spacer" default=""
+					label="Sans Serif Fonts"
+					description="Typography Parameters"
+					filter="string" />
+				<field name="redressed" type="radio" default="0" label="Redressed" description="Redressed">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="lobster-two" type="radio" default="0" label="Lobster Two" description="Lobster Two">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="lora" type="radio" default="0" label="Lora" description="Lora">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="maven-pro" type="radio" default="0" label="Maven Pro" description="Maven Pro">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="anonymous-pro" type="radio" default="0" label="Anonymous Pro" description="Anonymous Pro">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="open-sans" type="radio" default="0" label="Open Sans" description="Open Sans">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="puritan" type="radio" default="0" label="Puritan" description="Puritan">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="raleway" type="radio" default="0" label="Raleway" description="Raleway">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="spacer1"  type="spacer" default=""
+					label="Cursive Fonts"
+					description="Typography Parameters"
+					filter="string" />
+				<field name="labelleaurore" type="radio" default="0" label="La Belle Aurore" description="La Belle Aurore">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="lobster" type="radio" default="0" label="Lobster" description="Lobster">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="dancingscript" type="radio" default="0" label="Dancing Script" description="Dancing Script">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="dawning" type="radio" default="0" label="Dawning of a New Day" description="Dawning of a New Day">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="spacer1"  type="spacer" default=""
+					label="Headline Fonts"
+					description="Typography Parameters"
+					filter="string" />
+				<field name="holtwood" type="radio" default="0" label="Holtwood One SC" description="Holtwood One SC">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="carterone" type="radio" default="0" label="Carter One" description="Carter One">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="slackey" type="radio" default="0" label="Slackey" description="Slackey">
+					<option value="0">OFF</option>
+					<option value="1">ON</option>
+				</field>
+				<field name="fontdiner" type="radio" default="0" label="Fontdiner Swanky" description="Fontdiner Swanky">
 					<option value="0">OFF</option>
 					<option value="1">ON</option>
 				</field>

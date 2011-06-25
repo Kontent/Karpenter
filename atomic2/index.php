@@ -11,6 +11,8 @@ defined('_JEXEC') or die;
 JHtml::_('behavior.framework', true);
 
 /* Load template parameters */
+
+/* Blueprint */
 $blueprint = $this->params->get('blueprint');
 $blueliquid = $this->params->get('blue-liquid');
 $bluebuttons = $this->params->get('blue-buttons');
@@ -18,7 +20,9 @@ $bluefancy = $this->params->get('blue-fancy');
 $bluelinkicons = $this->params->get('blue-linkicons');
 $bluesilksprite = $this->params->get('blue-silksprite');
 $bluetabs = $this->params->get('blue-tabs');
-//////////////////////////////////////////////////
+$bluertl = $this->params->get('blue-rtl');
+
+/* Other CSS */
 $meyersreset = $this->params->get('meyers-reset');
 $cssprint = $this->params->get('css-print');
 $cssscreen = $this->params->get('css-screen');
@@ -26,10 +30,8 @@ $cssmobile = $this->params->get('css-mobile');
 $cssie = $this->params->get('css-ie');
 $css3buttons = $this->params->get('css-buttons');
 $csspie = $this->params->get('css-pie');
-//////////////////////////////////////////////////
-$adapt = $this->params->get('adapt');
-$html5shiv = $this->params->get('html5shiv');
-$modernizr = $this->params->get('modernizr');
+
+/* MooTools & jQuery */
 $jslibrary = $this->params->get('jslibrary');
 $mootouch = $this->params->get('mootouch');
 $lazy = $this->params->get('lazy');
@@ -38,7 +40,6 @@ $tabs = $this->params->get('tabs');
 $moodialog = $this->params->get('moodialog');
 $milkbox = $this->params->get('milkbox');
 $iphonecheck = $this->params->get('iphonecheck');
-$moosocialize = $this->params->get('moosocialize');
 $powertools = $this->params->get('powertools');
 $mochaui = $this->params->get('mochaui');
 $moodropmenu = $this->params->get('moodropmenu');
@@ -48,13 +49,21 @@ $jscarousel = $this->params->get('jscarousel');
 $jqtouch = $this->params->get('jqtouch');
 $jqueryui = $this->params->get('jqueryui');
 $jqsimpledrop = $this->params->get('jqsimpledrop');
+
+/* Other JavaScript */
+$html5shiv = $this->params->get('html5shiv');
+$modernizr = $this->params->get('modernizr');
+
+/* Media */
 $html5player = $this->params->get('html5player');
 $html5playerskin = $this->params->get('html5playerskin');
-//////////////////////////////////////////////////
+
 /* The following line gets the application object for things like displaying the site name */
 $app = JFactory::getApplication();
 $doc = JFactory::getDocument();
 $templateparams = $app->getTemplate(true)->params;
+
+/*----------------------- CSS -----------------------*/
 
 if($blueprint="1"){
 	$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-blue-screen.css', 'text/css', true);
@@ -70,54 +79,52 @@ if($blueprint="1"){
 	if($bluelinkicons="1"){
 		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-blue-linkicons.css', 'text/css', true);
 	}
-	
 	if($bluesilksprite="1"){
 		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-blue-silksprite.css', 'text/css', true);
 	}
 	if($bluetabs="1"){
 		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-blue-tabs.css', 'text/css', true);
 	}
-	
+	if($bluertl="1"){
+		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-blue-rtl.css', 'text/css', true);
+	}
+} else {
+	/* This reset should only be used if Blueprint isn't active. */
 	if($meyersreset="1"){
 		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-reset.css', 'text/css', true);
 	}
-	
-	if($cssscreen="1"){
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-screen.css', 'text/css', true);
-	}
-	
-	
-	
-	if($css3buttons="1"){
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-css3-buttons.css', 'text/css', true);
-	}
-	//if($csspie="1"){
-	//	$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-screen.css', 'text/css', true);
-	//}
-	
-	
-	
-	
-	if($cssprint="1"){
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-print.css', 'text/css', true);
-	}
-	if($cssmobile="1"){
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-mobile.css', 'text/css', true);
-	}
-	if($blueie="1"){
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-ie.css', 'text/css', true);
+}
+if($css3buttons="1"){
+	$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-css3-buttons.css', 'text/css', true);
+}
+if($cssscreen="1"){
+	$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-screen.css', 'text/css', true);
+}
+if($cssprint="1"){
+	$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-print.css', 'text/css', true);
+}
+if($cssmobile="1"){
+	$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-mobile.css', 'text/css', true);
+}
+if($cssie="1"){
+	$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-ie.css', 'text/css', true);
+}
+
+/*----------------------- JavaScript -----------------------*/
+
+if($csspie="1"){
+	$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-pie.js', 'text/javascript', true);
+}
+
+if ($modernizr == "1") {
+    $doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-modernizr.js', 'text/javascript', true);    
+} else {
+	/* Prevent conflict between these two. */
+	if ($html5shiv == "1") {
+    	$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-html5shiv.js', 'text/javascript', true);    
 	}
 }
 
-if ($adapt == "1") {
-    $doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-adapt.js', 'text/javascript', true);    
-}
-if ($html5shiv == "1") {
-    $doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-html5shiv.js', 'text/javascript', true);    
-}
-if ($modernizr == "1") {
-    $doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-modernizr.js', 'text/javascript', true);    
-}
 if ($jslibrary == "mootools") {
     $doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-mootools.js', 'text/javascript', true);  
 
@@ -133,10 +140,6 @@ if ($jslibrary == "mootools") {
 	if ($tabs == "1") {
 		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-tabs.js', 'text/javascript', true);    
 	}
-	if ($mootouch == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-mootouch.js', 'text/javascript', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-mootouch.css', 'text/css', true);
-	}
 	if ($moodialog == "1") {
 		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-Overlay.js', 'text/javascript', true);
 		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-MooDialog.Alert.js', 'text/javascript', true);
@@ -156,10 +159,6 @@ if ($jslibrary == "mootools") {
 		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-iphone-checkbox.js', 'text/javascript', true);
 		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-iphone-checkbox.css', 'text/css', true);
 	}
-	if ($moosocialize == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-mooSocialize.js', 'text/javascript', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-mooSocialize.css', 'text/css', true);
-	}
 	if ($powertools == "1") {
 		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-powertools.js', 'text/javascript', true);   
 	}
@@ -176,7 +175,10 @@ if ($jslibrary == "mootools") {
 		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-moodropmenu.js', 'text/javascript', true);
 		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-moodropmenu.css', 'text/css', true);
 	}
-	
+	if ($mootouch == "1") {
+		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-mootouch.js', 'text/javascript', true);
+		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-mootouch.css', 'text/css', true);
+	}
 } elseif ($jslibrary == "jquery") {
     $doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-jquery.js', 'text/javascript', true);
 	
@@ -191,89 +193,9 @@ if ($jslibrary == "mootools") {
 		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-jsCarousel.js', 'text/javascript', true);
 		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-jsCarousel.css', 'text/css', true);
 	}
-	if ($jqtouch == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/jquery/jQTouch/jqtouch/jqtouch.js', 'text/javascript', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/jquery/jQTouch/jqtouch/jqtouch.css', 'text/css', true);
-	}
-	if ($jqueryui == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/jquery/jquery-ui/js/jquery-ui.js', 'text/javascript', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/jquery/jquery-ui/css/ui-lightness/jquery-ui.css', 'text/css', true);
-	}
 	if ($jqsimpledrop == "1") {
 		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-simple-dropdown.js', 'text/javascript', true);
 		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-simple-dropdown.css', 'text/css', true);
-	}
-
-}elseif ($jslibrary == "both"){
-$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-mootools.js', 'text/javascript', true); 
-$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-jquery.js', 'text/javascript', true);
-
-if ($mootools-more == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-mootools-more.js', 'text/javascript', true);   
-	}
-	if ($lazy == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-lazy.js', 'text/javascript', true);    
-	}
-	if ($slideshow == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-slideshow.js', 'text/javascript', true);    
-	}
-	if ($tabs == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-tabs.js', 'text/javascript', true);    
-	}
-	if ($mootouch == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-mootouch.js', 'text/javascript', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-mootouch.css', 'text/css', true);
-	}
-	if ($moodialog == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-Overlay.js', 'text/javascript', true);
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-MooDialog.Alert.js', 'text/javascript', true);
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-MooDialog.Confirm.js', 'text/javascript', true);
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-MooDialog.Error.js', 'text/javascript', true);
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-MooDialog.Fx.js', 'text/javascript', true);
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-MooDialog.IFrame.js', 'text/javascript', true);
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-MooDialog.Prompt.js', 'text/javascript', true);
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-MooDialog.Request.js', 'text/javascript', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-MooDialog.css', 'text/css', true);
-	}
-	if ($milkbox == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-milkbox.js', 'text/javascript', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-milkbox.css', 'text/css', true);
-	}
-	if ($iphonecheck == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-iphone-checkbox.js', 'text/javascript', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-iphone-checkbox.css', 'text/css', true);
-	}
-	if ($moosocialize == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-mooSocialize.js', 'text/javascript', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-mooSocialize.css', 'text/css', true);
-	}
-	if ($powertools == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-powertools.js', 'text/javascript', true);   
-	}
-	if ($mochaui == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/mochaui/build/mocha.js', 'text/javascript', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/mochaui/build/themes/default/css/Content.css', 'text/css', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/mochaui/build/themes/default/css/Core.css', 'text/css', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/mochaui/build/themes/default/css/Dock.css', 'text/css', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/mochaui/build/themes/default/css/Layout.css', 'text/css', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/mochaui/build/themes/default/css/Tabs.css', 'text/css', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/mochaui/build/themes/default/css/Window.css', 'text/css', true);
-	}
-	if ($moodropmenu == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-moodropmenu.js', 'text/javascript', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-moodropmenu.css', 'text/css', true);
-	}
-	
-	if ($smartgallery == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-smart-gallery.js', 'text/javascript', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-smart-gallery.css', 'text/css', true);
-	}
-	if ($lazyloader == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-jq-modern-lazyloader.js', 'text/javascript', true);    
-	}
-	if ($jscarousel == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-jsCarousel.js', 'text/javascript', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-jsCarousel.css', 'text/css', true);
 	}
 	if ($jqtouch == "1") {
 		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/jquery/jQTouch/jqtouch/jqtouch.js', 'text/javascript', true);
@@ -283,20 +205,118 @@ if ($mootools-more == "1") {
 		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/jquery/jquery-ui/js/jquery-ui.js', 'text/javascript', true);
 		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/jquery/jquery-ui/css/ui-lightness/jquery-ui.css', 'text/css', true);
 	}
-	if ($jqsimpledrop == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-simple-dropdown.js', 'text/javascript', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-simple-dropdown.css', 'text/css', true);
+	if ($jqmobile == "1") {
+		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-jquery.mobile.min.js', 'text/javascript', true);
+		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-jquery.mobile.min.css', 'text/css', true);
+	}
+} elseif ($jslibrary == "both") {
+	$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-mootools.js', 'text/javascript', true); 
+	$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-jquery.js', 'text/javascript', true);
+
+	if ($mootools-more == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-mootools-more.js', 'text/javascript', true);   
+		}
+		if ($lazy == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-lazy.js', 'text/javascript', true);    
+		}
+		if ($slideshow == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-slideshow.js', 'text/javascript', true);    
+		}
+		if ($tabs == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-tabs.js', 'text/javascript', true);    
+		}
+		if ($mootouch == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-mootouch.js', 'text/javascript', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-mootouch.css', 'text/css', true);
+		}
+		if ($moodialog == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-Overlay.js', 'text/javascript', true);
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-MooDialog.Alert.js', 'text/javascript', true);
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-MooDialog.Confirm.js', 'text/javascript', true);
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-MooDialog.Error.js', 'text/javascript', true);
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-MooDialog.Fx.js', 'text/javascript', true);
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-MooDialog.IFrame.js', 'text/javascript', true);
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-MooDialog.Prompt.js', 'text/javascript', true);
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-MooDialog.Request.js', 'text/javascript', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-MooDialog.css', 'text/css', true);
+		}
+		if ($milkbox == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-milkbox.js', 'text/javascript', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-milkbox.css', 'text/css', true);
+		}
+		if ($iphonecheck == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-iphone-checkbox.js', 'text/javascript', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-iphone-checkbox.css', 'text/css', true);
+		}
+		if ($moosocialize == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-mooSocialize.js', 'text/javascript', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-mooSocialize.css', 'text/css', true);
+		}
+		if ($powertools == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-powertools.js', 'text/javascript', true);   
+		}
+		if ($mochaui == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/mochaui/build/mocha.js', 'text/javascript', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/mochaui/build/themes/default/css/Content.css', 'text/css', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/mochaui/build/themes/default/css/Core.css', 'text/css', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/mochaui/build/themes/default/css/Dock.css', 'text/css', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/mochaui/build/themes/default/css/Layout.css', 'text/css', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/mochaui/build/themes/default/css/Tabs.css', 'text/css', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/mochaui/build/themes/default/css/Window.css', 'text/css', true);
+		}
+		if ($moodropmenu == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-moodropmenu.js', 'text/javascript', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-moodropmenu.css', 'text/css', true);
+		}
+		if ($mootouch == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-mootouch.js', 'text/javascript', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-mootouch.css', 'text/css', true);
+		}
+		if ($smartgallery == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-smart-gallery.js', 'text/javascript', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-smart-gallery.css', 'text/css', true);
+		}
+		if ($lazyloader == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-jq-modern-lazyloader.js', 'text/javascript', true);    
+		}
+		if ($jscarousel == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-jsCarousel.js', 'text/javascript', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-jsCarousel.css', 'text/css', true);
+		}
+		if ($jqtouch == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/jquery/jQTouch/jqtouch/jqtouch.js', 'text/javascript', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/jquery/jQTouch/jqtouch/jqtouch.css', 'text/css', true);
+		}
+		if ($jqueryui == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/jquery/jquery-ui/js/jquery-ui.js', 'text/javascript', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/jquery/jquery-ui/css/ui-lightness/jquery-ui.css', 'text/css', true);
+		}
+		if ($jqsimpledrop == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-simple-dropdown.js', 'text/javascript', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-simple-dropdown.css', 'text/css', true);
+		}
+		if ($jqtouch == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/jquery/jQTouch/jqtouch/jqtouch.js', 'text/javascript', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/jquery/jQTouch/jqtouch/jqtouch.css', 'text/css', true);
+		}
+		if ($jqueryui == "1") {
+			$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/jquery/jquery-ui/js/jquery-ui.js', 'text/javascript', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/jquery/jquery-ui/css/ui-lightness/jquery-ui.css', 'text/css', true);
+		}
+		if ($jqmobile == "1") {
+    		$doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-jquery.mobile.min.js', 'text/javascript', true);
+    		$doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-jquery.mobile.min.css', 'text/css', true);
+		}
 	}
 	
-}
+/*----------------------- Mobile -----------------------*/
 
 if ($mobileesp == "1") {
     $doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-mdetect.js', 'text/javascript', true);    
 }
-if ($jqmobile == "1") {
-    $doc->addScript($this->baseurl . '/templates/'.'$this->template'.'/karpenter/js/karpenter-jquery.mobile.min.js', 'text/javascript', true);
-    $doc->addStyleSheet($this->baseurl . '/templates/'.'$this->template'.'/karpenter/css/karpenter-jquery.mobile.min.css', 'text/css', true);
-}
+
+/*----------------------- Media -----------------------*/
+
 if ($html5player == "1") {
 	switch($html5playerskin){
 		case 'original':
@@ -326,19 +346,18 @@ if ($html5player == "1") {
     <head>
         <jdoc:include type="head" />
 
-        <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/karpenter/karpenter-screen.css" type="text/css" media="screen, projection" />
-        <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/karpenter/karpenter-print.css" type="text/css" media="print" />
-        <!--[if lt IE 8]><link rel="stylesheet" href="blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
-        <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/karpenter/karpenter-blue-joomlanav.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/karpenter/css/karpenter-screen.css" type="text/css" media="screen, projection" />
+        <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/karpenter/css/karpenter-print.css" type="text/css" media="print" />
+        <!--[if lt IE 8]><link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/karpenter/karpenter-ie.css" type="text/css" media="screen, projection"><![endif]-->
+        <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/karpenter/css/karpenter-blue-joomlanav.css" type="text/css" media="screen" />
 
-        <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/template.css" type="text/css" />
+        <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/karpenter/css/karpenter.css" type="text/css" />
 
 		<?php if ($this->direction == 'rtl') : ?>
-            <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/karpenter/karpenter-blue-rtl.css" type="text/css" />
             <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/template_rtl.css" rel="stylesheet" type="text/css" />
 		<?php endif; ?>
 
-        <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/template.js"></script>
+        <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/karpenter/js/karpenter.js"></script>
 		<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/karpenter/js/karpenter-noconflict.js"></script>
     </head>
     <body>

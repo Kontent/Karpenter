@@ -1,8 +1,22 @@
 @charset "UTF-8";
 
-li .spacer .before {
-	border-top: 1px solid #ccc;
+li .spacer .after {
+	border-bottom: 1px solid #ccc;
+	display: block;
+	width: 100%;
+	float:left;
 }
 li .spacer label {
 	font-weight: bold;
+}
+fieldset.adminform fieldset.radio,
+fieldset.panelform fieldset.radio,
+fieldset.adminform-legacy fieldset.radio {
+    white-space:nowrap;
+}
+li .spacer span {
+	margin-top: -5px;
+}
+li .spacer .before {
+	margin-top: 10px;
 }

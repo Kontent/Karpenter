@@ -12,7 +12,11 @@
     <copyright>(C) 2011 Kontent Design. All rights reserved.</copyright>
     <license>GNU General Public License version 2 or later</license>
     <version>2.0</version>
-    <description>TPL_ATOMIC2_XML_DESCRIPTIJON</description>
+    <description>This the Atomic2 template with the Karpenter template framework installed. For more information, visit <![CDATA[<a href="http://extensions.kontentdesign.com" target="_blank">Kontent Extensions</a>]]>.   
+		<![CDATA[
+			<link rel="stylesheet" href="../templates/atomic2/css/administrator.css" type="text/css" /> 
+		]]>    
+    </description>
     <files>
         <folder>html</folder>
         <folder>css</folder>
@@ -38,8 +42,6 @@
         <position>atomic-topquote</position>
     </positions>
 	
-	<!-- 	For core templates, we also install/uninstall the language files in the core language folders.
-	-->
     <languages folder="language">
         <language tag="en-GB">en-GB/en-GB.tpl_atomic2.ini</language>
         <language tag="en-GB">en-GB/en-GB.tpl_atomic2.sys.ini</language>
@@ -48,62 +50,69 @@
     <config>
         <fields name="params">
         	<fieldset name="css"  label="TPL_ATOMIC2_CSS_FIELDSET_LABEL">
-        		<field name="blueprint" type="radio" default="0" label="Load CSS Framework" description="Blueprint CSS Framework">
+        		<field name="blueprint" type="radio" default="0" label="Load CSS Framework" description="Load Blueprint, a simple CSS framework for quickly creating table-less layouts.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="blue-liquid" type="radio" default="0" label="Liquid Grid Plug-in" description="Blueprint Plug-in: Liquid Grid">
+				<field name="spacer1a"  type="spacer" default=""
+					label=""
+					description=""
+					filter="string" />
+				<field name="blue-liquid" type="radio" default="0" label="Liquid Plug-in" description="A plug-in to use a flexible width instead of a fixed width layout.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="blue-buttons" type="radio" default="0" label="CSS Buttons Plug-in" description="Blueprint Plug-in: CSS Buttons:: enables nice CSS buttons. Turn this off if you're using CSS3 buttons.">
+				<field name="blue-buttons" type="radio" default="0" label="Buttons Plug-in" description="Enables nice CSS buttons. Turn this off if you're using CSS3 buttons.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="blue-fancy" type="radio" default="0" label="Fancy Type Plug-in" description="Blueprint Plug-in: Fancy Type">
+				<field name="blue-fancy" type="radio" default="0" label="Fancy Type Plug-in" description="Add some extra fancy type like quotation marks and special capital letters.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="blue-linkicons" type="radio" default="0" label="Link Icons Plug-in" description="Blueprint Plug-in: Link Icons">
+				<field name="blue-linkicons" type="radio" default="0" label="Link Icons Plug-in" description="Displays an icon next to each link based on why type of link it is.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="blue-silksprite" type="radio" default="0" label="SilkSprite Plug-in" description="BBlueprint Plug-in: SilkSprite">
+				<field name="blue-silksprite" type="radio" default="0" label="SilkSprite Plug-in" description="Adds the popular Silk icon package as a sprite.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="blue-tabs" type="radio" default="0" label="Tabs Plug-in" description="Blueprint Plug-in: Tabs">
+				<field name="blue-tabs" type="radio" default="0" label="Tabs Plug-in" description="A simple tab system.">
+					<option value="0">JOFF</option>
+					<option value="1">JON</option>
+				</field>
+				<field name="blue-rtl" type="radio" default="0" label="RTL Plug-in" description="Turn this on if you want to use RTL enhancements">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
         	</fieldset>
         	 <fieldset name="other-css" label="TPL_ATOMIC2_OTHERCSS_FIELDSET_LABEL">
-                
-				<field name="meyers-reset" type="radio" default="0" label="Meyers' Reset" description="Load a variation on Eric Meyer's CSS Reset. Blueprint already has this so if you have Blueprint enabled, leave this off.">
+				<field name="meyers-reset" type="radio" default="0" label="Meyer's Reset" description="Load Eric Meyer's CSS Reset Reloaded. If you have Blueprint enabled, this will automatically be disabled.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-    			 <field name="css-print" type="radio" default="0" label="Print CSS File" description="Load Print CSS File">
+    			 <field name="css-print" type="radio" default="0" label="Print CSS File" description="Load the default CSS file (karpenter-print.css) with print-specific styles.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="css-screen" type="radio" default="0" label="Screen CSS File" description="Load Screen CSS File">
+				<field name="css-screen" type="radio" default="0" label="Screen CSS File" description="Load the default CSS file (karpenter-screen.css) with screen-specific styles.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="css-mobile" type="radio" default="0" label="Mobile CSS File" description="Load Mobile CSS File">
+				<field name="css-mobile" type="radio" default="0" label="Mobile CSS File" description="Load the default CSS file (karpenter-mobile.css) with mobile-specific styles.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="css-ie" type="radio" default="0" label="IE CSS File" description="Load IE CSS File">
+				<field name="css-ie" type="radio" default="0" label="IE CSS File" description="Load the default CSS file (karpenter-ie.css) with IE-specific styles.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="css3-buttons" type="radio" default="0" label="CSS3 Buttons" description="CSS3 Buttons">
+				<field name="css3-buttons" type="radio" default="0" label="CSS3 Buttons" description="Load beautiful CSS3-based buttons.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="css-pie" type="radio" default="0" label="CSS PIE" description="CSS PIE">
+				<field name="css-pie" type="radio" default="0" label="CSS PIE" description="Progressive Internet Explorer (PIE) gives IE versions 6-8 the ability to render many CSS3 elements.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>				
@@ -117,86 +126,77 @@
                     <option value="jquery">jQuery</option>
 					<option value="both">Both</option>
                 </field>
-				 <field name="adapt" type="radio" default="0" label="Use Minimized" description="Use minimized version of the file">
-					<option value="0">JOFF</option>
-					<option value="1">JON</option>
-				</field>    
-    			<field name="adapt" type="radio" default="0" label="Adapt" description="Adapt">
-					<option value="0">JOFF</option>
-					<option value="1">JON</option>
-				</field>
-				<field name="html5shiv" type="radio" default="0" label="HTML5shiv" description="HTML5shiv">
+                <field name="spacer3a"  type="spacer" default=""
+					label=""
+					description=""
+					filter="string" />
+				<field name="html5shiv" type="radio" default="0" label="HTML5shiv" description="A library for IE to recognise and style HTML5 elements. This will be disabled if you have Modernizr enabled.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-               <field name="modernizr" type="radio" default="0" label="Modernizr" description="Modernizr">
+               <field name="modernizr" type="radio" default="0" label="Modernizr" description="The Modernizr library detects the availability of native implementations of specific browser features (mainly in HTML5 and CSS3). This allows you to account for browser differences better than normal User Agent sniffing.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
             </fieldset>
             <fieldset name="mootools" label="TPL_ATOMIC2_MOOTOOLS_FIELDSET_LABEL">
-            	<field name="mootools-more" type="radio" default="0" label="MooTools More" description="Load MooTools More">
+            	<field name="mootools-more" type="radio" default="0" label="MooTools More" description="MooTools More extends the core framework to include robust form manipulation, UI features, and more effects and utilities. It is required for most MooTools plug-ins.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="lazy" type="radio" default="0" label="Lazy Loading Plug-in" description="Lazy Loading">
+				<field name="lazy" type="radio" default="0" label="Lazy Loading Plug-in" description="LazyLoad allows you to defer image loading until the user scrolls down to each image.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="slideshow" type="radio" default="0" label="Slideshow Plug-in" description="Slideshow">
+				<field name="slideshow" type="radio" default="0" label="Slideshow Plug-in" description="An amazing full-featured slideshow with navigation and19 cool transitions right out of the box.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="tabs" type="radio" default="0" label="Tabs Plug-in" description="Tabs">
+				<field name="tabs" type="radio" default="0" label="Tabs Plug-in" description="MooTabs allows the creation of tabbed panes and provides transition effects when switching between the panes.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="moodialog" type="radio" default="0" label="MooDialog Plug-in" description="MooDialog">
+				<field name="moodialog" type="radio" default="0" label="MooDialog Plug-in" description="Replace those boring alert and confirm boxes with a nice MooDiaog version">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="milkbox" type="radio" default="0" label="Milkbox Plug-in" description="Milkbox">
+				<field name="milkbox" type="radio" default="0" label="Milkbox Plug-in" description="An expanded lightbox for images and Flash.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="moosocialize" type="radio" default="0" label="MooSocialize Plug-in" description="MooSocialize">
+				<field name="powertools" type="radio" default="0" label="PowerTools Plug-in" description="PowerTools add extra features to MooTools including mobile gestures or a navigation tree. It requires MooTools Core and MooTools More.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="powertools" type="radio" default="0" label="PowerTools Plug-in" description="PowerTools">
-					<option value="0">JOFF</option>
-					<option value="1">JON</option>
-				</field>
-				<field name="moodropmenu" type="radio" default="0" label="MooDropMenu Plug-in" description="MooDropMenu">
+				<field name="moodropmenu" type="radio" default="0" label="MooDropMenu Plug-in" description="Just create a simple menu list and let MooDropMenu transform it into an attractive dropdown menu.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
         		</field>
-        		<field name="mootips" type="radio" default="0" label="MooTips Plug-in" description="MooTips">
+        		<field name="mootips" type="radio" default="0" label="MooTips Plug-in" description="Create fancy tooltips for just about anything.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
         		</field>
         	</fieldset>
-        	  <fieldset name="jquery" label="TPL_ATOMIC2_JQUERY_FIELDSET_LABEL">
-				
+        	<fieldset name="jquery" label="TPL_ATOMIC2_JQUERY_FIELDSET_LABEL">
 				<field name="jqsimpledrop" type="radio" default="0" label="Simple Dropdown Plug-in" description="jQuery Simple Dropdown">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="lazyloader" type="radio" default="0" label="LazyLoader Plug-in" description="LazyLoader">
+				<field name="lazyloader" type="radio" default="0" label="LazyLoader Plug-in" description="Your site images load only when they are visible. This 'lazy loading' of elements speeds up page loads and gives a nice effect.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="smartgallery" type="radio" default="0" label="Smart Gallery Plug-in" description="Smart Gallery">
+				<field name="smartgallery" type="radio" default="0" label="Smart Gallery Plug-in" description="SmartGallery is an interactive image gallery that is specifically designed to support huge data. It is lightweight, lightening fast and fully customizable. SmartGallery comes with twelve transition effects including some unique transition effect and thumbnail navigation.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="jscarousel" type="radio" default="0" label="jsCarousel Plug-in" description="jsCarousel">
+				<field name="jscarousel" type="radio" default="0" label="JSCarousel Plug-in" description="Quickly assemble a vertical or horizontal image slider to feature your images. ">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
         	</fieldset>
         	<fieldset name="media" label="TPL_ATOMIC2_MEDIA_FIELDSET_LABEL">
-				<field name="html5player" type="radio" default="0" label="HTML5 Video Player" description="HTML5 Video Player">
+				<field name="html5player" type="radio" default="0" label="HTML5 Video Player" description="This HTML5 video player enables playing images on all browsers and platforms.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>				
@@ -211,73 +211,68 @@
                 </field>
         	</fieldset>
         	<fieldset name="mobile" label="TPL_ATOMIC2_MOBILE_FIELDSET_LABEL">
-				<field name="mobileesp" type="radio" default="0" label="MobileESP" description="MobileESP">
+				<field name="jslibrary" type="list" default=""
+					label="Preferred Mobile Framework"
+					description="Choose your preferred mobile framework."
+					filter="word">
+					<option value="">None</option>
+                    <option value="mootouch">MooTouch</option>
+                    <option value="jqtouch">jQTouch</option>
+					<option value="jqmobile">jQuery Mobile</option>
+                </field>
+                <field name="mobileesp" type="radio" default="0" label="MobileESP" description="MobileESP is a simple, lightweight API for detecting mobile devices.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="jqmobile" type="radio" default="0" label="jQuery Mobile" description="jQuery Mobile">
-					<option value="0">JOFF</option>
-					<option value="1">JON</option>
-				</field>
-				<field name="jqtouch" type="radio" default="0" label="jQTouch Plug-in" description="jQTouch">
-					<option value="0">JOFF</option>
-					<option value="1">JON</option>
-				</field>
-				<field name="mootouch" type="radio" default="0" label="MooTouch Plug-in" description="MooTouch">
-					<option value="0">JOFF</option>
-					<option value="1">JON</option>
-				</field>
-				<field name="iphonecheck" type="radio" default="0" label="iPhone Checkboxes" description="iPhone Checkboxes">
+				<field name="iphonecheck" type="radio" default="0" label="iPhone Checkboxes" description="Create these simple sliders for your checkboxes.">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
         	</fieldset>
-        	
         	<fieldset name="userinterface" label="TPL_ATOMIC2_USERINTERFACE_FIELDSET_LABEL">
-				<field name="jqueryui" type="radio" default="0" label="jQueryUI" description="jQueryUI">
-					<option value="0">JOFF</option>
-					<option value="1">JON</option>
-				</field>
-				<field name="mochaui" type="radio" default="0" label="MochaUI Plug-in" description="MochaUI">
-					<option value="0">JOFF</option>
-					<option value="1">JON</option>
-				</field>
+        		<field name="uilibrary" type="list" default=""
+					label="Preferred UI Framework"
+					description="Choose your preferred UI framework"
+					filter="word">
+					<option value="">None</option>
+                    <option value="mochaui">MochaUI</option>
+                    <option value="jqueryui">jQueryUI</option>
+                </field>
         	</fieldset>
-        	        
         	<fieldset name="typography" label="TPL_ATOMIC2_WEBFONTS_FIELDSET_LABEL">
         		<field name="spacer8a"  type="spacer" default=""
 					label="Serif Fonts"
 					description="Typography Parameters"
 					filter="string" />
-				<field name="arvo" type="radio" default="0" label="Arvo" description="Arvo">
+				<field name="arvo" type="radio" default="0" label="Arvo" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="bentham" type="radio" default="0" label="Bentham" description="Bentham">
+				<field name="bentham" type="radio" default="0" label="Bentham" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="crismon" type="radio" default="0" label="Crimson Text" description="Crimson Text">
+				<field name="crismon" type="radio" default="0" label="Crimson Text" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="garamond" type="radio" default="0" label="EB Garamond" description="EB Garamond">
+				<field name="garamond" type="radio" default="0" label="EB Garamond" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="goudy" type="radio" default="0" label="Goudy Bookletter 1911" description="Goudy Bookletter 1911">
+				<field name="goudy" type="radio" default="0" label="Goudy Bookletter 1911" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="josefin-slab" type="radio" default="0" label="Josefin Slab" description="Josefin Slab">
+				<field name="josefin-slab" type="radio" default="0" label="Josefin Slab" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="kameron" type="radio" default="0" label="Kameron" description="Kameron">
+				<field name="kameron" type="radio" default="0" label="Kameron" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="nixieone" type="radio" default="0" label="Nixie One" description="Nixie One">
+				<field name="nixieone" type="radio" default="0" label="Nixie One" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
@@ -285,35 +280,35 @@
 					label="Sans Serif Fonts"
 					description="Typography Parameters"
 					filter="string" />
-				<field name="anonymous-pro" type="radio" default="0" label="Anonymous Pro" description="Anonymous Pro">
+				<field name="anonymous-pro" type="radio" default="0" label="Anonymous Pro" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="lobster-two" type="radio" default="0" label="Lobster Two" description="Lobster Two">
+				<field name="lobster-two" type="radio" default="0" label="Lobster Two" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="lora" type="radio" default="0" label="Lora" description="Lora">
+				<field name="lora" type="radio" default="0" label="Lora" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="maven-pro" type="radio" default="0" label="Maven Pro" description="Maven Pro">
+				<field name="maven-pro" type="radio" default="0" label="Maven Pro" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="open-sans" type="radio" default="0" label="Open Sans" description="Open Sans">
+				<field name="open-sans" type="radio" default="0" label="Open Sans" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="puritan" type="radio" default="0" label="Puritan" description="Puritan">
+				<field name="puritan" type="radio" default="0" label="Puritan" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="raleway" type="radio" default="0" label="Raleway" description="Raleway">
+				<field name="raleway" type="radio" default="0" label="Raleway" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="redressed" type="radio" default="0" label="Redressed" description="Redressed">
+				<field name="redressed" type="radio" default="0" label="Redressed" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
@@ -321,19 +316,19 @@
 					label="Cursive Fonts"
 					description="Typography Parameters"
 					filter="string" />
-				<field name="dancingscript" type="radio" default="0" label="Dancing Script" description="Dancing Script">
+				<field name="dancingscript" type="radio" default="0" label="Dancing Script" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="dawning" type="radio" default="0" label="Dawning of a New Day" description="Dawning of a New Day">
+				<field name="dawning" type="radio" default="0" label="Dawning of a New Day" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="labelleaurore" type="radio" default="0" label="La Belle Aurore" description="La Belle Aurore">
+				<field name="labelleaurore" type="radio" default="0" label="La Belle Aurore" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="lobster" type="radio" default="0" label="Lobster" description="Lobster">
+				<field name="lobster" type="radio" default="0" label="Lobster" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
@@ -341,19 +336,19 @@
 					label="Headline Fonts"
 					description="Typography Parameters"
 					filter="string" />
-				<field name="carterone" type="radio" default="0" label="Carter One" description="Carter One">
+				<field name="carterone" type="radio" default="0" label="Carter One" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="fontdiner" type="radio" default="0" label="Fontdiner Swanky" description="Fontdiner Swanky">
+				<field name="fontdiner" type="radio" default="0" label="Fontdiner Swanky" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="holtwood" type="radio" default="0" label="Holtwood One SC" description="Holtwood One SC">
+				<field name="holtwood" type="radio" default="0" label="Holtwood One SC" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="slackey" type="radio" default="0" label="Slackey" description="Slackey">
+				<field name="slackey" type="radio" default="0" label="Slackey" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>

@@ -138,6 +138,10 @@
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
+				<field name="html5boilerplate" type="radio" default="0" label="HTML5 Boilerplate" description="HTML5 Boilerplate">
+					<option value="0">JOFF</option>
+					<option value="1">JON</option>
+				</field>
             </fieldset>
             <fieldset name="mootools" label="TPL_ATOMIC2_MOOTOOLS_FIELDSET_LABEL">
             	<field name="mootools-more" type="radio" default="0" label="MooTools More" description="MooTools More extends the core framework to include robust form manipulation, UI features, and more effects and utilities. It is required for most MooTools plug-ins.">
@@ -211,7 +215,7 @@
                 </field>
         	</fieldset>
         	<fieldset name="mobile" label="TPL_ATOMIC2_MOBILE_FIELDSET_LABEL">
-				<field name="jslibrary" type="list" default=""
+				<field name="mjslibrary" type="list" default=""
 					label="Preferred Mobile Framework"
 					description="Choose your preferred mobile framework."
 					filter="word">
@@ -264,7 +268,7 @@
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="josefin-slab" type="radio" default="0" label="Josefin Slab" description="Google Web Font">
+				<field name="josefinslab" type="radio" default="0" label="Josefin Slab" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
@@ -280,11 +284,11 @@
 					label="Sans Serif Fonts"
 					description="Typography Parameters"
 					filter="string" />
-				<field name="anonymous-pro" type="radio" default="0" label="Anonymous Pro" description="Google Web Font">
+				<field name="anonymouspro" type="radio" default="0" label="Anonymous Pro" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="lobster-two" type="radio" default="0" label="Lobster Two" description="Google Web Font">
+				<field name="lobstertwo" type="radio" default="0" label="Lobster Two" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
@@ -292,11 +296,11 @@
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="maven-pro" type="radio" default="0" label="Maven Pro" description="Google Web Font">
+				<field name="mavenpro" type="radio" default="0" label="Maven Pro" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="open-sans" type="radio" default="0" label="Open Sans" description="Google Web Font">
+				<field name="opensans" type="radio" default="0" label="Open Sans" description="Google Web Font">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>

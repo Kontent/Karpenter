@@ -123,7 +123,12 @@
                     <option value="mootools">TPL_ATOMIC2_PARAM_MOOTOOLS</option>
                     <option value="jquery">TPL_ATOMIC2_PARAM_JQUERY</option>
 					<option value="both">TPL_ATOMIC2_PARAM_BOTH</option>
+					<option value="none">TPL_ATOMIC2_PARAM_NONE</option>
                 </field>
+               <field name="karpenterjs" type="radio" default="0" label="TPL_ATOMIC2_PARAM_KARPENTERJS_LABEL" description="TPL_ATOMIC2_PARAM_KARPENTERJS_DESC">
+					<option value="0">JOFF</option>
+					<option value="1">JON</option>
+				</field>
                 <field name="spacer3a"  type="spacer" default=""
 					label=""
 					description=""
@@ -254,7 +259,7 @@
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-				<field name="crismon" type="radio" default="0" label="Crimson Text" description="TPL_ATOMIC2_PARAM_GOOGLE_WEB_FONT_DESC">
+				<field name="crimson" type="radio" default="0" label="Crimson Text" description="TPL_ATOMIC2_PARAM_GOOGLE_WEB_FONT_DESC">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>

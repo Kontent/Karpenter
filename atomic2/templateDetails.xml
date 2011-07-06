@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
-<extension
-	version="1.6"
-	type="template"
-	client="site">
-    <name>Atomic2</name>
+<extension version="1.6" type="template" client="site">
+    <name>atomic2</name>
     <creationDate>10/10/09</creationDate>
     <author>Ron Severdia</author>
     <authorEmail>contact@kontentdesign.com</authorEmail>
@@ -21,6 +18,7 @@
         <folder>html</folder>
         <folder>css</folder>
         <folder>images</folder>
+        <folder>karpenter</folder>
         <folder>language</folder>
         <folder>js</folder>
         <filename>index.php</filename>
@@ -49,7 +47,7 @@
         
     <config>
         <fields name="params">
-        	<fieldset name="css"  label="TPL_ATOMIC2_CSS_FIELDSET_LABEL">
+        	<fieldset name="css" label="TPL_ATOMIC2_CSS_FIELDSET_LABEL">
         		<field name="blueprint" type="radio" default="0" label="TPL_ATOMIC2_PARAM_LOAD_CSS_FRAMEWORK_LABEL" description="TPL_ATOMIC2_PARAM_LOAD_CSS_FRAMEWORK_DESC">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
@@ -246,7 +244,7 @@
         	<fieldset name="typography" label="TPL_ATOMIC2_WEBFONTS_FIELDSET_LABEL">
         		<field name="spacer8a"  type="spacer" default=""
 					label="TPL_ATOMIC2_PARAM_WEBFONTS_SERIF_LABEL"
-					description="TPL_ATOMIC2_PARAM_TYPOGRAPHY_DESC
+					description="TPL_ATOMIC2_PARAM_TYPOGRAPHY_DESC"
 					filter="string" />
 				<field name="arvo" type="radio" default="0" label="Arvo" description="TPL_ATOMIC2_PARAM_GOOGLE_WEB_FONT_DESC">
 					<option value="0">JOFF</option>
@@ -282,7 +280,7 @@
 				</field>
 				<field name="spacer8b"  type="spacer" default=""
 					label="TPL_ATOMIC2_PARAM_WEBFONTS_SANSSERIF_LABEL"
-					description="TPL_ATOMIC2_PARAM_TYPOGRAPHY_DESC
+					description="TPL_ATOMIC2_PARAM_TYPOGRAPHY_DESC"
 					filter="string" />
 				<field name="anonymouspro" type="radio" default="0" label="Anonymous Pro" description="TPL_ATOMIC2_PARAM_GOOGLE_WEB_FONT_DESC">
 					<option value="0">JOFF</option>
@@ -318,7 +316,7 @@
 				</field>
 				<field name="spacer8c"  type="spacer" default=""
 					label="TPL_ATOMIC2_PARAM_WEBFONTS_CURSIVE_LABEL"
-					description="TPL_ATOMIC2_PARAM_TYPOGRAPHY_DESC
+					description="TPL_ATOMIC2_PARAM_TYPOGRAPHY_DESC"
 					filter="string" />
 				<field name="dancingscript" type="radio" default="0" label="Dancing Script" description="TPL_ATOMIC2_PARAM_GOOGLE_WEB_FONT_DESC">
 					<option value="0">JOFF</option>
@@ -338,7 +336,7 @@
 				</field>
 				<field name="spacer8d"  type="spacer" default=""
 					label="TPL_ATOMIC2_PARAM_WEBFONTS_HEADLINE_LABEL"
-					description="TPL_ATOMIC2_PARAM_TYPOGRAPHY_DESC
+					description="TPL_ATOMIC2_PARAM_TYPOGRAPHY_DESC"
 					filter="string" />
 				<field name="carterone" type="radio" default="0" label="Carter One" description="TPL_ATOMIC2_PARAM_GOOGLE_WEB_FONT_DESC">
 					<option value="0">JOFF</option>

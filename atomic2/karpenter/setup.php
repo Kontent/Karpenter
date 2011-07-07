@@ -31,6 +31,8 @@ $csspie = $this->params->get('css-pie');
 /* MooTools & jQuery */
 $jslibrary = $this->params->get('jslibrary');
 $mootoolsmore = $this->params->get('mootools-more');
+$captionjs = $this->params->get('captionjs');
+$corejs = $this->params->get('corejs');
 $lazy = $this->params->get('lazy');
 $slideshow = $this->params->get('slideshow');
 $tabs = $this->params->get('tabs');
@@ -162,7 +164,12 @@ if ($modernizr == "1") {
 
 if ($jslibrary == "mootools") {
     $doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-mootools.js', 'text/javascript', true);  
-
+	if ($captionjs == "1") {
+		   // TODO
+	}
+	if ($corejs == "1") {
+		// TODO   
+	}
 	if ($mootoolsmore == "1") {
 		$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-mootools-more.js', 'text/javascript', true);   
 	}
@@ -268,9 +275,15 @@ if ($jslibrary == "mootools") {
 		$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/js/html5-boilerplate/css/handheld.css', 'text/css',"all");
 	}
 
-	if ($mootoolsmore == "1") {
+		if ($mootoolsmore == "1") {
 			// JHtml::_('behavior.framework', true);
 			$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-mootools-more.js', 'text/javascript', true);   
+		}
+		if ($captionjs == "1") {
+		   // TODO
+		}
+		if ($corejs == "1") {
+			// TODO   
 		}
 		if ($lazy == "1") {
 			$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-lazy.js', 'text/javascript', true);    

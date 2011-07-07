@@ -30,7 +30,7 @@
         <filename>component.php</filename>
         <filename>error.php</filename>
     </files>
-
+    
     <positions>
         <position>atomic-bottomleft</position>
         <position>atomic-bottommiddle</position>
@@ -116,7 +116,7 @@
 				</field>				
             </fieldset>
             <fieldset name="javascript" label="TPL_ATOMIC2_JAVASCRIPT_FIELDSET_LABEL">
-                <field name="jslibrary" type="list" default="mootools"
+               <field name="jslibrary" type="list" default="mootools"
 					label="TPL_ATOMIC2_PARAM_PREFJS_LABEL"
 					description="TPL_ATOMIC2_PARAM_PREFJS_DESC"
 					filter="word">
@@ -124,8 +124,12 @@
                     <option value="jquery">TPL_ATOMIC2_PARAM_JQUERY</option>
 					<option value="both">TPL_ATOMIC2_PARAM_BOTH</option>
 					<option value="none">TPL_ATOMIC2_PARAM_NONE</option>
-                </field>
-               <field name="karpenterjs" type="radio" default="0" label="TPL_ATOMIC2_PARAM_KARPENTERJS_LABEL" description="TPL_ATOMIC2_PARAM_KARPENTERJS_DESC">
+               </field>
+               <field name="corejs" type="radio" default="1" label="TPL_ATOMIC2_PARAM_COREJS_LABEL" description="TPL_ATOMIC2_PARAM_COREJS_DESC">
+					<option value="0">JOFF</option>
+					<option value="1">JON</option>
+				</field>
+               <field name="captionjs" type="radio" default="1" label="TPL_ATOMIC2_PARAM_CAPTIONJS_LABEL" description="TPL_ATOMIC2_PARAM_CAPTIONJS_DESC">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
@@ -133,6 +137,10 @@
 					label=""
 					description=""
 					filter="string" />
+				<field name="karpenterjs" type="radio" default="0" label="TPL_ATOMIC2_PARAM_KARPENTERJS_LABEL" description="TPL_ATOMIC2_PARAM_KARPENTERJS_DESC">
+					<option value="0">JOFF</option>
+					<option value="1">JON</option>
+				</field>
 				<field name="html5shiv" type="radio" default="0" label="TPL_ATOMIC2_PARAM_HTML5SHIV_LABEL" description="TPL_ATOMIC2_PARAM_HTML5SHIV_DESC">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>

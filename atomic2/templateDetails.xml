@@ -86,10 +86,14 @@
 				</field>
         	</fieldset>
         	 <fieldset name="other-css" label="TPL_ATOMIC2_OTHERCSS_FIELDSET_LABEL">
-				<field name="meyers-reset" type="radio" default="0" label="TPL_ATOMIC2_PARAM_CSS_MEYERS_LABEL" description="TPL_ATOMIC2_PARAM_CSS_MEYERS_DESC">
-					<option value="0">JOFF</option>
-					<option value="1">JON</option>
-				</field>
+        	 	<field name="cssreset" type="list" default="none"
+					label="TPL_ATOMIC2_PARAM_PREFRESET_LABEL"
+					description="TPL_ATOMIC2_PARAM_PREFRESET_DESC"
+					filter="word">
+                    <option value="meyers-reset">TPL_ATOMIC2_PARAM_CSS_MEYERS_LABEL</option>
+                    <option value="normalize">TPL_ATOMIC2_PARAM_CSS_NORM_LABEL</option>
+					<option value="none">TPL_ATOMIC2_PARAM_NONE</option>
+               </field>
     			 <field name="css-print" type="radio" default="0" label="TPL_ATOMIC2_PARAM_PRINTCSS_LABEL" description="TPL_ATOMIC2_PARAM_PRINTCSS_DESC">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
@@ -256,6 +260,14 @@
         	</fieldset>
         	<fieldset name="typography" label="TPL_ATOMIC2_WEBFONTS_FIELDSET_LABEL">
         		<field name="spacer8a"  type="spacer" default=""
+					label="TPL_ATOMIC2_PARAM_TYPOGRAPHY_LABEL"
+					description="TPL_ATOMIC2_PARAM_TYPOGRAPHY_DESC"
+					filter="string" />
+				<field name="ligature" type="radio" default="0" label="TPL_ATOMIC2_PARAM_LIGATURE_LABEL" description="TPL_ATOMIC2_PARAM_LIGATURE_DESC">
+					<option value="0">JOFF</option>
+					<option value="1">JON</option>
+				</field>	
+        		<field name="spacer8b"  type="spacer" default=""
 					label="TPL_ATOMIC2_PARAM_WEBFONTS_SERIF_LABEL"
 					description="TPL_ATOMIC2_PARAM_TYPOGRAPHY_DESC"
 					filter="string" />

@@ -20,7 +20,7 @@ $bluetabs = $this->params->get('blue-tabs');
 $bluertl = $this->params->get('blue-rtl');
 
 /* Other CSS */
-$meyersreset = $this->params->get('meyers-reset');
+$cssreset = $this->params->get('cssreset');
 $cssprint = $this->params->get('css-print');
 $cssscreen = $this->params->get('css-screen');
 $cssmobile = $this->params->get('css-mobile');
@@ -49,10 +49,11 @@ $jqsimpledrop = $this->params->get('jqsimpledrop');
 /* Other JavaScript */
 $html5shiv = $this->params->get('html5shiv');
 $modernizr = $this->params->get('modernizr');
-$html5boilerplate = $this->params->get('html5boilerplate');
 $karpenterjs = $this->params->get('karpenterjs');
+$ligature = $this->params->get('ligature');
 
 /* Mobile */
+$html5boilerplate = $this->params->get('html5boilerplate');
 $mjslibrary = $this->params->get('mjslibrary');
 $mobileesp = $this->params->get('mobileesp');
 $iphonecheck = $this->params->get('iphonecheck');
@@ -125,9 +126,12 @@ if($blueprint=="1"){
 		$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-blue-rtl.css', 'text/css', "all");
 	}
 } else {
-	/* This reset should only be used if Blueprint isn't active. */
-	if($meyersreset=="1"){
+	/* Resets should only be used if Blueprint isn't active. */
+	if($cssreset=="meyers-reset"){
 		$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-reset.css', 'text/css', "all");
+	}
+	if($csssreset=="normalize"){
+		$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-normalize.css', 'text/css', "all");
 	}
 }
 if($css3buttons=="1"){
@@ -377,6 +381,9 @@ if ($jslibrary == "mootools") {
 		}
 		$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-noconflict.js', 'text/javascript', true);
 	}
+if ($ligature == "1") {
+	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-ligature.js', 'text/javascript', true);    
+}
 if ($karpenterjs == "1") {
 	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter.js', 'text/javascript', true);    
 }

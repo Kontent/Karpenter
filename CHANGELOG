@@ -23,6 +23,10 @@ Legend:
 
 -------------
 
+18-Jul-2011 Severdia
+- Removed unneccesary files (unminified versions)
+- Updated setup file
+
 6-Jul-2011 Severdia
 # Fixed language file issues for params
 # Fixed only loading Blueprint CSS file for Joomla menu if BP loads

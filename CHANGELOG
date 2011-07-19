@@ -23,6 +23,9 @@ Legend:
 
 -------------
 
+19-Jul-2011 Severdia
+# Fixed IE check
+
 18-Jul-2011 Severdia
 - Removed unneccesary files (unminified versions)
 - Updated setup file

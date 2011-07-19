@@ -97,6 +97,18 @@ $app = JFactory::getApplication();
 $doc = JFactory::getDocument();
 $templateparams = $app->getTemplate(true)->params;
 
+
+/* This function is used to check whether browser is IE or not */
+function using_ie() {
+    $u_agent = $_SERVER['HTTP_USER_AGENT'];
+    $ub = false;
+    if(preg_match('/MSIE/i',$u_agent)) {
+        $ub = true;
+    }
+    return $ub;
+}
+
+
 /*----------------------- CSS -----------------------*/
 
 if($blueprint=="1"){
@@ -126,9 +138,9 @@ if($blueprint=="1"){
 	if($bluertl=="1"){
 		$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-blue-rtl.css', 'text/css', "all");
 	}
-	<!--[if IE]>
+	if (using_ie()){
  		$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-blue-ie.css', 'text/css', "all");
-	<![endif]-->	
+	}
 } else {
 	/* Resets should only be used if Blueprint isn't active. */
 	if($cssreset=="meyers-reset"){

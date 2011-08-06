@@ -92,6 +92,8 @@ $fontdiner=$this->params->get('fontdiner');
 $holtwood=$this->params->get('holtwood');
 $slackey=$this->params->get('slackey');
 
+$jsForRemove = array();	
+
 /* The following line gets the application object for things like displaying the site name */
 $app = JFactory::getApplication();
 $doc = JFactory::getDocument();
@@ -143,17 +145,13 @@ if($blueprint=="1"){
 	}
 } else {
 	/* Resets should only be used if Blueprint isn't active. */
-	if($cssreset=="meyers-reset"){
+	if($cssreset=="meyersreset"){
 		$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-reset.css', 'text/css', "all");
 	}
-	if($csssreset=="normalize"){
+	if($cssreset=="normalize"){
 		$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-normalize.css', 'text/css', "all");
 	}
 }
-
-
-
-
 
 if($css3buttons=="1"){
 	$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-css3-buttons.css', 'text/css', "all");
@@ -188,13 +186,11 @@ if ($modernizr == "1") {
 }
 
 if ($jslibrary == "mootools") {
-    $doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-mootools.js', 'text/javascript', true);  
-	if ($captionjs == "1") {
-		   // TODO
-	}
-	if ($corejs == "1") {
-		// TODO   
-	}
+	if (!$captionjs)
+	   $jsForRemove[] = '/caption.js';
+		//unset($doc->_scripts[JURI::base() . 'media/system/js/caption.js']);
+		//$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-mootools.js', 'text/javascript', true);  
+	
 	if ($mootoolsmore == "1") {
 		$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-mootools-more.js', 'text/javascript', true);   
 	}
@@ -255,7 +251,11 @@ if ($jslibrary == "mootools") {
 		JHTML::_('behavior.tooltip'); 
 	}
 } elseif ($jslibrary == "jquery") {
-    	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-jquery.min.js', 'text/javascript', true);
+		$jsForRemove[] = '/mootools-core.js';	# added by LAB;
+		$jsForRemove[] = '/caption.js';	# added by LAB; caption.js is only loaded if MooTools Core is loaded.
+		//unset($doc->_scripts[JURI::base() . 'media/system/js/mootools-core.js']);
+		//unset($doc->_scripts[JURI::base() . 'media/system/js/caption.js']);
+    	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-jquery.js', 'text/javascript', true);
 	
 	if ($html5boilerplate == "1" && $modernizr=="1") {
 		$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/html5-boilerplate/js/script.js', 'text/javascript', true);
@@ -265,7 +265,7 @@ if ($jslibrary == "mootools") {
 		$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/js/html5-boilerplate/css/handheld.css', 'text/css',"all");
 	}	
 	if ($smartgallery == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-smart-gallery.min.js', 'text/javascript', true);
+		$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-smart-gallery.js', 'text/javascript', true);
 		$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-smart-gallery.css', 'text/css', "all");
 	}
 	if ($lazyloader == "1") {
@@ -288,15 +288,15 @@ if ($jslibrary == "mootools") {
 		$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/js/jquery/jQTouch/jqtouch/jqtouch.css', 'text/css',"all");
 	}
 	if ($mjslibrary == "jqmobile") {
-		$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-jquery.mobile.min.js', 'text/javascript', true);
-		$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-jquery.mobile.min.css', 'text/css', "all");
+		$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-jquery.mobile.js', 'text/javascript', true);
+		$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-jquery.mobile.css', 'text/css', "all");
 	}
 	
 	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-noconflict.js', 'text/javascript', true);
 	
 } elseif ($jslibrary == "both") {
 	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-mootools.js', 'text/javascript', true); 
-	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-jquery.min.js', 'text/javascript', true);
+	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-jquery.js', 'text/javascript', true);
 	
 	if ($html5boilerplate == "1" && $modernizr=="1") {
 		$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/html5-boilerplate/js/plugins.js', 'text/javascript', true);
@@ -370,7 +370,7 @@ if ($jslibrary == "mootools") {
 			JHTML::_('behavior.tooltip'); 
 		}
 		if ($smartgallery == "1") {
-			$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-smart-gallery.min.js', 'text/javascript', true);
+			$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-smart-gallery.js', 'text/javascript', true);
 			$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-smart-gallery.css', 'text/css',"all");
 		}
 		if ($lazyloader == "1") {
@@ -405,17 +405,28 @@ if ($jslibrary == "mootools") {
 			$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/js/jquery/jQTouch/jqtouch/jqtouch.css', 'text/css', "all");
 		}
 		if ($mjslibrary == "jqmobile") {
-			$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-jquery.mobile.min.js', 'text/javascript', true);
-			$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-jquery.mobile.min.css', 'text/css', "all");
+			$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-jquery.mobile.js', 'text/javascript', true);
+			$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-jquery.mobile.css', 'text/css', "all");
 		}
 		$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-noconflict.js', 'text/javascript', true);
-	}
+}
+elseif ($jslibrary == "none") {
+	$jsForRemove[] = '/mootools-core.js';
+	$jsForRemove[] = '/caption.js';
+
+	//unset($doc->_scripts[JURI::base() . 'media/system/js/mootools-core.js']);
+	//unset($doc->_scripts[JURI::base() . 'media/system/js/caption.js']);
+}
+
+if (!$corejs) {
+	$jsForRemove[] = '/core.js';
+	//unset($doc->_scripts[JURI::base() . 'media/system/js/core.js']);
+}
+
 if ($ligature == "1") {
 	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-ligature.js', 'text/javascript', true);    
 }
-if ($karpenterjs == "1") {
-	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter.js', 'text/javascript', true);    
-}
+
 		
 /*----------------------- Mobile -----------------------*/
 
@@ -445,6 +456,12 @@ if ($html5player == "1") {
 	}
     $doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/video-js/video.js', 'text/javascript', true);
 	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/video-js/video-instance.js', 'text/javascript', true);
+}
+
+/*----------------------- Custom JavaScript File -----------------------*/
+
+if ($karpenterjs == "1") {
+	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter.js', 'text/javascript', true);    
 }
 
 /*----------------------- Fonts -----------------------*/
@@ -524,7 +541,13 @@ function clearCoreJavaScript($mootools = false, $caption = false)
 		    }
 		}
 	}
-
 	// Set the updated head data.
 	$this->setHeadData($head);		
+}
+foreach ($doc->_scripts as $key => $value) {
+	foreach ($jsForRemove as $js) {
+		if (strpos($key, $js) !== false) {
+			unset($doc->_scripts[$key]);	# So it means that this will work;
+		}
+	}
 }

@@ -1,4 +1,7 @@
 <?php
+/* error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
+ini_set("display_errors", 1); */
+
 /**
  * @version		$Id: index.php  $
  * @package		'.$this->template.' | Karpenter

@@ -23,6 +23,14 @@ Legend:
 
 -------------
 
+
+6-Aug-2011 Severdia
+^ Minified CSS & JS
+# Fixed CSS reset
+# Reordered custom CSS & JS files
+# Fixed missing language string
+
+
 23-Jul-2011 Severdia
 # Fixed demo files
 

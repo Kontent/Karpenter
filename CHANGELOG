@@ -23,13 +23,18 @@ Legend:
 
 -------------
 
+8-Aug-2011 Severdia
+^ More minified CSS & JS
+# Separated special Blueprint CSS for Joomla to its own file
++ New language strings
+^ Combined Javascript and CSS parameter sections into one
+^ Set defaults
 
 6-Aug-2011 Severdia
 ^ Minified CSS & JS
 # Fixed CSS reset
 # Reordered custom CSS & JS files
 # Fixed missing language string
-
 
 23-Jul-2011 Severdia
 # Fixed demo files

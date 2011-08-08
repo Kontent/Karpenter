@@ -53,8 +53,8 @@
 					<option value="1">JON</option>
 				</field>
 				<field name="spacer1a"  type="spacer" default=""
-					label=""
-					description=""
+					label="TPL_ATOMIC2_BPPLUGINS_FIELDSET_LABEL"
+					description="TPL_ATOMIC2_BPPLUGINS_FIELDSET_DESC"
 					filter="string" />
 				<field name="blue-liquid" type="radio" default="0" label="TPL_ATOMIC2_PARAM_CSS_LIQUID_PLUGIN_LABEL" description="TPL_ATOMIC2_PARAM_CSS_LIQUID_PLUGIN_DESC">
 					<option value="0">JOFF</option>
@@ -84,8 +84,10 @@
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-        	</fieldset>
-        	 <fieldset name="other-css" label="TPL_ATOMIC2_OTHERCSS_FIELDSET_LABEL">
+			<field name="spacer1b"  type="spacer" default=""
+					label="TPL_ATOMIC2_OTHERCSS_FIELDSET_LABEL"
+					description="TPL_ATOMIC2_OTHERCSS_FIELDSET_DESC"
+					filter="string" />	
         	 	<field name="cssreset" type="list" default="none"
 					label="TPL_ATOMIC2_PARAM_PREFRESET_LABEL"
 					description="TPL_ATOMIC2_PARAM_PREFRESET_DESC"
@@ -94,7 +96,11 @@
                     <option value="normalize">TPL_ATOMIC2_PARAM_CSS_NORM_LABEL</option>
 					<option value="none">TPL_ATOMIC2_PARAM_NONE</option>
                </field>
-    			 <field name="css-print" type="radio" default="0" label="TPL_ATOMIC2_PARAM_PRINTCSS_LABEL" description="TPL_ATOMIC2_PARAM_PRINTCSS_DESC">
+               <field name="css-basic" type="radio" default="0" label="TPL_ATOMIC2_PARAM_BASICCSS_LABEL" description="TPL_ATOMIC2_PARAM_BASICCSS_DESC">
+					<option value="0">JOFF</option>
+					<option value="1">JON</option>
+				</field>
+    			<field name="css-print" type="radio" default="0" label="TPL_ATOMIC2_PARAM_PRINTCSS_LABEL" description="TPL_ATOMIC2_PARAM_PRINTCSS_DESC">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
@@ -137,31 +143,24 @@
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>
-                <field name="spacer3a"  type="spacer" default=""
-					label=""
-					description=""
+            	<field name="spacer3a"  type="spacer" default=""
+					label="TPL_ATOMIC2_MOOTOOLS_FIELDSET_LABEL"
+					description="TPL_ATOMIC2_MOOTOOLS_FIELDSET_DESC"
 					filter="string" />
-				<field name="karpenterjs" type="radio" default="0" label="TPL_ATOMIC2_PARAM_KARPENTERJS_LABEL" description="TPL_ATOMIC2_PARAM_KARPENTERJS_DESC">
-					<option value="0">JOFF</option>
-					<option value="1">JON</option>
+				<field name="which_mootools" type="list" default="joomla"
+					label="TPL_ATOMIC2_PARAM_MOOTOOLS_LABEL"
+					description="TPL_ATOMIC2_PARAM_MOOTOOLS_DESC"
+					filter="word">
+                    <option value="joomla">TPL_ATOMIC2_PARAM_MOOTOOLS_DEFAULT_VERSION</option>
+                    <option value="custom">TPL_ATOMIC2_PARAM_MOOTOOLS_KARPENTER</option>
 				</field>
-				<field name="html5shiv" type="radio" default="0" label="TPL_ATOMIC2_PARAM_HTML5SHIV_LABEL" description="TPL_ATOMIC2_PARAM_HTML5SHIV_DESC">
-					<option value="0">JOFF</option>
-					<option value="1">JON</option>
-				</field>
-               <field name="modernizr" type="radio" default="0" label="TPL_ATOMIC2_PARAM_MODERNIZR_LABEL" description="TPL_ATOMIC2_PARAM_MODERNIZR_DESC">
-					<option value="0">JOFF</option>
-					<option value="1">JON</option>
-				</field>
-				<field name="html5boilerplate" type="radio" default="0" label="TPL_ATOMIC2_PARAM_HTML5BOILERPLATE_LABEL" description="TPL_ATOMIC2_PARAM_HTML5BOILERPLATE_DESC">
-					<option value="0">JOFF</option>
-					<option value="1">JON</option>
-				</field>
-            </fieldset>
-            <fieldset name="mootools" label="TPL_ATOMIC2_MOOTOOLS_FIELDSET_LABEL">
-            	<field name="mootools-more" type="radio" default="0" label="TPL_ATOMIC2_PARAM_MOOTOOLSMORE_LABEL" description="TPL_ATOMIC2_PARAM_MOOTOOLSMORE_DESC">
-					<option value="0">JOFF</option>
-					<option value="1">JON</option>
+				<field name="which_mootools_more" type="list" default="none"
+					label="TPL_ATOMIC2_PARAM_MOOTOOLSMORE_LABEL"
+					description="TPL_ATOMIC2_PARAM_MOOTOOLSMORE_DESC"
+					filter="word">
+					<option value="none">TPL_ATOMIC2_PARAM_NONE</option>
+                    <option value="joomla">TPL_ATOMIC2_PARAM_MOOTOOLS_DEFAULT_VERSION</option>
+                    <option value="custom">TPL_ATOMIC2_PARAM_MOOTOOLSMORE_KARPENTER</option>
 				</field>
 				<field name="lazy" type="radio" default="0" label="TPL_ATOMIC2_PARAM_LAZYLOAD_LABEL" description="TPL_ATOMIC2_PARAM_LAZYLOAD_DESC">
 					<option value="0">JOFF</option>
@@ -195,8 +194,10 @@
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
         		</field>
-        	</fieldset>
-        	<fieldset name="jquery" label="TPL_ATOMIC2_JQUERY_FIELDSET_LABEL">
+				<field name="spacer3b"  type="spacer" default=""
+					label="TPL_ATOMIC2_JQUERY_FIELDSET_LABEL"
+					description="TPL_ATOMIC2_JQUERY_FIELDSET_DESC"
+					filter="string" />
 				<field name="jqsimpledrop" type="radio" default="0" label="TPL_ATOMIC2_PARAM_SIMPLEDROP_LABEL" description="TPL_ATOMIC2_PARAM_SIMPLEDROP_DESC">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
@@ -210,6 +211,26 @@
 					<option value="1">JON</option>
 				</field>
 				<field name="jscarousel" type="radio" default="0" label="TPL_ATOMIC2_PARAM_JSCAROUSEL_LABEL" description="TPL_ATOMIC2_PARAM_JSCAROUSEL_DESC">
+					<option value="0">JOFF</option>
+					<option value="1">JON</option>
+				</field>
+				<field name="spacer3c"  type="spacer" default=""
+					label="TPL_ATOMIC2_OTHERJS_FIELDSET_LABEL"
+					description="TPL_ATOMIC2_OTHERJS_FIELDSET_DESC"
+					filter="string" />
+				<field name="karpenterjs" type="radio" default="0" label="TPL_ATOMIC2_PARAM_KARPENTERJS_LABEL" description="TPL_ATOMIC2_PARAM_KARPENTERJS_DESC">
+					<option value="0">JOFF</option>
+					<option value="1">JON</option>
+				</field>
+				<field name="html5shiv" type="radio" default="0" label="TPL_ATOMIC2_PARAM_HTML5SHIV_LABEL" description="TPL_ATOMIC2_PARAM_HTML5SHIV_DESC">
+					<option value="0">JOFF</option>
+					<option value="1">JON</option>
+				</field>
+               <field name="modernizr" type="radio" default="0" label="TPL_ATOMIC2_PARAM_MODERNIZR_LABEL" description="TPL_ATOMIC2_PARAM_MODERNIZR_DESC">
+					<option value="0">JOFF</option>
+					<option value="1">JON</option>
+				</field>
+				<field name="html5boilerplate" type="radio" default="0" label="TPL_ATOMIC2_PARAM_HTML5BOILERPLATE_LABEL" description="TPL_ATOMIC2_PARAM_HTML5BOILERPLATE_DESC">
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 				</field>

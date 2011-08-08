@@ -20,6 +20,7 @@ $bluetabs = $this->params->get('blue-tabs');
 $bluertl = $this->params->get('blue-rtl');
 
 /* Other CSS */
+$cssbasic = $this->params->get('css-basic');
 $cssreset = $this->params->get('cssreset');
 $cssprint = $this->params->get('css-print');
 $cssscreen = $this->params->get('css-screen');
@@ -30,7 +31,7 @@ $csspie = $this->params->get('css-pie');
 
 /* MooTools & jQuery */
 $jslibrary = $this->params->get('jslibrary');
-$mootoolsmore = $this->params->get('mootools-more');
+//$mootoolsmore = $this->params->get('mootools-more');
 $captionjs = $this->params->get('captionjs');
 $corejs = $this->params->get('corejs');
 $lazy = $this->params->get('lazy');
@@ -45,6 +46,8 @@ $smartgallery = $this->params->get('smartgallery');
 $lazyloader = $this->params->get('lazyloader');
 $jscarousel = $this->params->get('jscarousel');
 $jqsimpledrop = $this->params->get('jqsimpledrop');
+$which_mootools = $this->params->get('which_mootools');
+$which_mootools_more = $this->params->get('which_mootools_more');
 
 /* Other JavaScript */
 $html5shiv = $this->params->get('html5shiv');
@@ -92,29 +95,27 @@ $fontdiner=$this->params->get('fontdiner');
 $holtwood=$this->params->get('holtwood');
 $slackey=$this->params->get('slackey');
 
-$jsForRemove = array();	
+$jsForRemove = array();
 
 /* The following line gets the application object for things like displaying the site name */
 $app = JFactory::getApplication();
 $doc = JFactory::getDocument();
 $templateparams = $app->getTemplate(true)->params;
 
-
 /* This function is used to check whether browser is IE or not */
-function using_ie() {
+function using_ie(){
     $u_agent = $_SERVER['HTTP_USER_AGENT'];
     $ub = false;
-    if(preg_match('/MSIE/i',$u_agent)) {
+    if(preg_match('/MSIE/i',$u_agent)){
         $ub = true;
     }
     return $ub;
 }
 
-
 /*----------------------- CSS -----------------------*/
 
 if($blueprint=="1"){
-	$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter.css', 'text/css', "all");
+	$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-blue.css', 'text/css', "all");
 	$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-blue-joomlanav.css', 'text/css', "all");
 	$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-blue-screen.css', 'text/css', "screen");
 	$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-blue-print.css', 'text/css', "print");
@@ -152,9 +153,11 @@ if($blueprint=="1"){
 		$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-normalize.css', 'text/css', "all");
 	}
 }
-
 if($css3buttons=="1"){
 	$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-css3-buttons.css', 'text/css', "all");
+}
+if($csssbasic=="1"){
+	$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter.css', 'text/css', "all");
 }
 if($cssscreen=="1"){
 	$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-screen.css', 'text/css', "screen");
@@ -168,7 +171,6 @@ if($cssmobile=="1"){
 if($cssie=="1"){
 	$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-ie.css', 'text/css', "all");
 }
-
 
 /*----------------------- JavaScript -----------------------*/
 
@@ -186,14 +188,24 @@ if ($modernizr == "1") {
 }
 
 if ($jslibrary == "mootools") {
-	if (!$captionjs)
-	   $jsForRemove[] = '/caption.js';
-		//unset($doc->_scripts[JURI::base() . 'media/system/js/caption.js']);
-		//$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-mootools.js', 'text/javascript', true);  
 	
-	if ($mootoolsmore == "1") {
-		$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-mootools-more.js', 'text/javascript', true);   
+	if (!$captionjs)
+	   $jsForRemove[] = '/caption.js';	# added by LAB;
+	
+	if ($which_mootools == 'custom')
+	{
+		$jsForRemove[] = '/mootools-core.js';
+		$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-mootools.js', 'text/javascript', true);    
 	}
+	
+	# MooTools More Inclusion;
+	if ($which_mootools_more == 'joomla')
+		$doc->addScript($this->baseurl . '/media/system/js/mootools-more.js', 'text/javascript', true);   
+	elseif ($which_mootools_more == 'custom')
+		$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-mootools-more.js', 'text/javascript', true);   
+	else
+		$jsForRemove[] = '/mootools-more.js';
+		
 	if ($lazy == "1") {
 		$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-lazy.js', 'text/javascript', true);    
 	}
@@ -253,8 +265,7 @@ if ($jslibrary == "mootools") {
 } elseif ($jslibrary == "jquery") {
 		$jsForRemove[] = '/mootools-core.js';	# added by LAB;
 		$jsForRemove[] = '/caption.js';	# added by LAB; caption.js is only loaded if MooTools Core is loaded.
-		//unset($doc->_scripts[JURI::base() . 'media/system/js/mootools-core.js']);
-		//unset($doc->_scripts[JURI::base() . 'media/system/js/caption.js']);
+		$jsForRemove[] = '/core.js';	# added by LAB; core.js is only loaded if MooTools Core is loaded.
     	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-jquery.js', 'text/javascript', true);
 	
 	if ($html5boilerplate == "1" && $modernizr=="1") {
@@ -291,30 +302,33 @@ if ($jslibrary == "mootools") {
 		$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-jquery.mobile.js', 'text/javascript', true);
 		$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-jquery.mobile.css', 'text/css', "all");
 	}
-	
 	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-noconflict.js', 'text/javascript', true);
 	
 } elseif ($jslibrary == "both") {
-	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-mootools.js', 'text/javascript', true); 
 	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-jquery.js', 'text/javascript', true);
 	
+	if (!$captionjs){
+		$jsForRemove[] = '/caption.js';
+	}
+	if ($which_mootools == 'custom'){
+		$jsForRemove[] = '/mootools-core.js';
+		$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-mootools.js', 'text/javascript', true);    
+	}
 	if ($html5boilerplate == "1" && $modernizr=="1") {
 		$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/html5-boilerplate/js/plugins.js', 'text/javascript', true);
 		$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/html5-boilerplate/js/dd_belatedpng.js', 'text/javascript', true);		
 		$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/js/html5-boilerplate/css/style.css', 'text/css', "all");
 		$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/js/html5-boilerplate/css/handheld.css', 'text/css',"all");
 	}
-
-		if ($mootoolsmore == "1") {
-			// JHtml::_('behavior.framework', true);
-			$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-mootools-more.js', 'text/javascript', true);   
-		}
-		if ($captionjs == "1") {
-		   // TODO
-		}
-		if ($corejs == "1") {
-			// TODO   
-		}
+	
+	# MooTools More Inclusion;
+	if ($which_mootools_more == 'joomla')
+		$doc->addScript($this->baseurl . '/media/system/js/mootools-more.js', 'text/javascript', true);   
+	elseif ($which_mootools_more == 'custom')
+		$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-mootools-more.js', 'text/javascript', true);   
+	else
+		$jsForRemove[] = '/mootools-more.js';
+		
 		if ($lazy == "1") {
 			$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-lazy.js', 'text/javascript', true);    
 		}
@@ -413,20 +427,17 @@ if ($jslibrary == "mootools") {
 elseif ($jslibrary == "none") {
 	$jsForRemove[] = '/mootools-core.js';
 	$jsForRemove[] = '/caption.js';
-
-	//unset($doc->_scripts[JURI::base() . 'media/system/js/mootools-core.js']);
-	//unset($doc->_scripts[JURI::base() . 'media/system/js/caption.js']);
-}
-
-if (!$corejs) {
 	$jsForRemove[] = '/core.js';
-	//unset($doc->_scripts[JURI::base() . 'media/system/js/core.js']);
 }
-
+if (!$corejs){
+	$jsForRemove[] = '/core.js';
+}
 if ($ligature == "1") {
 	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter-ligature.js', 'text/javascript', true);    
 }
-
+if ($karpenterjs == "1") {
+	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter.js', 'text/javascript', true);    
+}
 		
 /*----------------------- Mobile -----------------------*/
 
@@ -456,12 +467,6 @@ if ($html5player == "1") {
 	}
     $doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/video-js/video.js', 'text/javascript', true);
 	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/video-js/video-instance.js', 'text/javascript', true);
-}
-
-/*----------------------- Custom JavaScript File -----------------------*/
-
-if ($karpenterjs == "1") {
-	$doc->addScript($this->baseurl . '/templates/'.$this->template.'/karpenter/js/karpenter.js', 'text/javascript', true);    
 }
 
 /*----------------------- Fonts -----------------------*/
@@ -503,8 +508,7 @@ if (!function_exists('karpenter_null')) {
  *
  * @return  void
  */
-function clearCoreJavaScript($mootools = false, $caption = false)
-{
+function clearCoreJavaScript($mootools = false, $caption = false) {
 	// Get the head data.
 	$head = $this->getHeadData();
 
@@ -513,14 +517,12 @@ function clearCoreJavaScript($mootools = false, $caption = false)
 
 	// Clear the core js framework and ensure it isn't added again.
 	if ($mootools) {
-		
 		// Make sure it isn't added again.
 		JHtml::register('behavior.framework', 'karpenter_null');
 
 		// Make sure we remove any of the variants.
 		$search = array_merge($search, array('mootools-core-uncompressed.js', 'mootools-core.js', 'mootools-more-uncompressed.js', 'mootools-more.js'));
 	}
-	
 	// Clear the core caption js and ensure it isn't added again.
 	if ($caption) {
 		JHtml::register('behavior.caption', 'karpenter_null');
@@ -528,7 +530,6 @@ function clearCoreJavaScript($mootools = false, $caption = false)
 		// Make sure we remove the caption script.
 		$search[] = 'caption.js';
 	}
-
 	// Remove the scripts if they exist.
 	if (!empty($search)) {
 		foreach ($head['scripts'] as $k => $script)
@@ -544,9 +545,10 @@ function clearCoreJavaScript($mootools = false, $caption = false)
 	// Set the updated head data.
 	$this->setHeadData($head);		
 }
-foreach ($doc->_scripts as $key => $value) {
-	foreach ($jsForRemove as $js) {
-		if (strpos($key, $js) !== false) {
+# Need to check for the system files include;
+foreach ($doc->_scripts as $key => $value){
+	foreach ($jsForRemove as $js){
+		if (strpos($key, $js) !== false){
 			unset($doc->_scripts[$key]);	# So it means that this will work;
 		}
 	}

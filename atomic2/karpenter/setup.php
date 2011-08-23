@@ -156,7 +156,7 @@ if($blueprint=="1"){
 if($css3buttons=="1"){
 	$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter-css3-buttons.css', 'text/css', "all");
 }
-if($csssbasic=="1"){
+if($cssbasic=="1"){
 	$doc->addStyleSheet($this->baseurl . '/templates/'.$this->template.'/karpenter/css/karpenter.css', 'text/css', "all");
 }
 if($cssscreen=="1"){

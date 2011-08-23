@@ -23,6 +23,9 @@ Legend:
 
 -------------
 
+23-Aug-2011 Severdia
+# Fixed typo in variable name
+
 8-Aug-2011 Severdia
 ^ More minified CSS & JS
 # Separated special Blueprint CSS for Joomla to its own file
